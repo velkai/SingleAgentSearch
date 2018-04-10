@@ -13,11 +13,12 @@ class IDA{
     
 public:
     
+    bool GetPath(STP s, STPState &start, STPState &goal);
+    
 private:
     
-    int fcost;
-    int gcost;
-    int hcost;
     
-    bool IDASearch(STP s, STPState &start; STPState &goal, )
+    bool IDASearch(STP s, STPState &start, STPState &goal , int d);
 };
+
+
