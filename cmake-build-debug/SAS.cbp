@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SAS"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SAS">
+				<Option output="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug/SAS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3"/>
+					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 SAS"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SAS/fast">
+				<Option output="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug/SAS.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3"/>
+					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 SAS/fast"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Jimmy Holmes/Desktop/SAS/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f &quot;C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\Makefile&quot; VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.h">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDAData.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.h">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/main.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDAData.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.h">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.hpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/main.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
