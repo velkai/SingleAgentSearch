@@ -10,5 +10,21 @@
 #define IDA_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include <vector>
+#include "STP.h"
+#include "ManhattanDistance.h"
+
+class IDA{
+
+public:
+
+    std::deque<STPState> GetPath(STP &s, STPState &start, STPState &goal, Heuristic h);
+
+private:
+
+
+    int IDASearch(STP &s, std::deque<STPState> &path, int g, int t, Heuristic h); // takes the path, g-value, and threshold as parameters
+};
 
 #endif /* IDA_hpp */
