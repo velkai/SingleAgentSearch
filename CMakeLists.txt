@@ -28,4 +28,4 @@ add_executable(SAS
         SingleAgentSearch/Homework3/Homework3/STP.cpp
         SingleAgentSearch/Homework3/Homework3/STP.h
         SingleAgentSearch/Homework3/Homework3/Timer.cpp
-        SingleAgentSearch/Homework3/Homework3/Timer.h)
+        SingleAgentSearch/Homework3/Homework3/Timer.h Homework3/Homework3/ManhattanDistance.h Homework3/Homework3/ManhattanDistance.cpp)

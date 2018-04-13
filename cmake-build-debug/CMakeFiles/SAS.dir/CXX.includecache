@@ -1,0 +1,124 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.cpp
+DFID.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.h
+stdio.h
+-
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.cpp
+IDA.hpp
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.hpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.hpp
+stdio.h
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.cpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+random
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+stdio.h
+-
+vector
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.cpp
+Timer.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.h
+stdint.h
+-
+fstream
+-
+chrono
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.cpp
+heuristic.hpp
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.hpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.hpp
+stdio.h
+-
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/main.cpp
+iostream
+-
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.h
+Timer.h
+C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/Timer.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.cpp
+IDA.hpp
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.hpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.hpp
+stdio.h
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.cpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h
+random
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h
+stdio.h
+-
+vector
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.cpp
+Timer.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.h
+stdint.h
+-
+fstream
+-
+chrono
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.cpp
+heuristic.hpp
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.hpp
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.hpp
+stdio.h
+-
+
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/main.cpp
+iostream
+-
+STP.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h
+Timer.h
+C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.h
+

@@ -99,6 +99,12 @@
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDAData.hpp">
 			<Option target="SAS"/>
 		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/ManhattanDistance.cpp">
+			<Option target="SAS"/>
+		</Unit>
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/ManhattanDistance.h">
+			<Option target="SAS"/>
+		</Unit>
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.cpp">
 			<Option target="SAS"/>
 		</Unit>

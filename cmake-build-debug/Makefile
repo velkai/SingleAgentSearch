@@ -178,6 +178,33 @@ Homework3\Homework3\IDA.cpp.s:
 	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\IDA.cpp.s
 .PHONY : Homework3\Homework3\IDA.cpp.s
 
+Homework3\Homework3\ManhattanDistance.obj: Homework3\Homework3\ManhattanDistance.cpp.obj
+
+.PHONY : Homework3\Homework3\ManhattanDistance.obj
+
+# target to build an object file
+Homework3\Homework3\ManhattanDistance.cpp.obj:
+	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj
+.PHONY : Homework3\Homework3\ManhattanDistance.cpp.obj
+
+Homework3\Homework3\ManhattanDistance.i: Homework3\Homework3\ManhattanDistance.cpp.i
+
+.PHONY : Homework3\Homework3\ManhattanDistance.i
+
+# target to preprocess a source file
+Homework3\Homework3\ManhattanDistance.cpp.i:
+	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.i
+.PHONY : Homework3\Homework3\ManhattanDistance.cpp.i
+
+Homework3\Homework3\ManhattanDistance.s: Homework3\Homework3\ManhattanDistance.cpp.s
+
+.PHONY : Homework3\Homework3\ManhattanDistance.s
+
+# target to generate assembly for a file
+Homework3\Homework3\ManhattanDistance.cpp.s:
+	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.s
+.PHONY : Homework3\Homework3\ManhattanDistance.cpp.s
+
 Homework3\Homework3\STP.obj: Homework3\Homework3\STP.cpp.obj
 
 .PHONY : Homework3\Homework3\STP.obj
@@ -436,6 +463,9 @@ help:
 	@echo ... Homework3/Homework3/IDA.obj
 	@echo ... Homework3/Homework3/IDA.i
 	@echo ... Homework3/Homework3/IDA.s
+	@echo ... Homework3/Homework3/ManhattanDistance.obj
+	@echo ... Homework3/Homework3/ManhattanDistance.i
+	@echo ... Homework3/Homework3/ManhattanDistance.s
 	@echo ... Homework3/Homework3/STP.obj
 	@echo ... Homework3/Homework3/STP.i
 	@echo ... Homework3/Homework3/STP.s
