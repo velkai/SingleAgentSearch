@@ -117,6 +117,8 @@ void STP::ApplyOperator(STPState &s, STPSlideDir o)
 			swap(s.tiles[s.blankx][s.blanky], s.tiles[s.blankx+1][s.blanky]);
 			s.blankx++;
 			break;
+		case kNone:
+			break;
 	}
 }
 
@@ -131,6 +133,25 @@ void STP::UndoOperator(STPState &s, STPSlideDir o)
 		case kLeft: ApplyOperator(s, kRight);
 			break;
 		case kRight: ApplyOperator(s, kLeft);
+			break;
+		case kNone:
+			break;
+	}
+}
+
+void STP::InvertOperator(STPSlideDir &o)
+{
+	switch (o)
+	{
+		case kUp: o = kDown;
+			break;
+		case kDown: o = kUp;
+			break;
+		case kLeft: o = kRight;
+			break;
+		case kRight: o = kLeft;
+			break;
+		case kNone:
 			break;
 	}
 }

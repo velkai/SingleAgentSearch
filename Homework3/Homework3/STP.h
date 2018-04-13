@@ -12,21 +12,17 @@
 const int kMaxWidth = 3;
 const int kMaxHeight = 5;
 
-
-// ENUM Slide operators
 enum STPSlideDir  {
-
-    kUp,
+	kUp,
 	kDown,
 	kRight,
-	kLeft
+	kLeft,
+	kNone
 };
 
 class STPState {
-
 public:
-	
-    STPState();   // Init to goal state - default constructor will copy
+	STPState();   // Init to goal state - default constructor will copy
 	void Reset(); // Reset to goal state
 	int tiles[kMaxWidth][kMaxHeight];
 	int blankx, blanky;
@@ -41,6 +37,7 @@ public:
 	void GetOperators(STPState &s, std::vector<STPSlideDir> &operators);
 	void ApplyOperator(STPState &s, STPSlideDir o);
 	void UndoOperator(STPState &s, STPSlideDir o);
+	void InvertOperator(STPSlideDir &o);
 };
 
 void DoRandomWalkSuccessors(STP &puzzle, STPState &s, int length);

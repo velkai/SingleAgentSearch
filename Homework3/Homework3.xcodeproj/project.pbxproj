@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9170E9C3207D5B370097F130 /* heuristic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9170E9C1207D5B370097F130 /* heuristic.cpp */; };
-		91D16F1B207D42DA00C12951 /* STP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D16F1A207D42DA00C12951 /* STP.cpp */; };
+		9170E9C520803B4C0097F130 /* DFID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9170E9C420803B4B0097F130 /* DFID.cpp */; };
+		9170E9C920803B7E0097F130 /* STP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9170E9C820803B7E0097F130 /* STP.cpp */; };
 		91D16F1E207D42E600C12951 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D16F1D207D42E600C12951 /* Timer.cpp */; };
 		91D16F21207D42F200C12951 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D16F20207D42F100C12951 /* main.cpp */; };
 		91D16F27207D499600C12951 /* IDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91D16F25207D499600C12951 /* IDA.cpp */; };
@@ -29,9 +30,11 @@
 /* Begin PBXFileReference section */
 		9170E9C1207D5B370097F130 /* heuristic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = heuristic.cpp; sourceTree = "<group>"; };
 		9170E9C2207D5B370097F130 /* heuristic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = heuristic.hpp; sourceTree = "<group>"; };
+		9170E9C420803B4B0097F130 /* DFID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DFID.cpp; sourceTree = "<group>"; };
+		9170E9C620803B5F0097F130 /* DFID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DFID.h; sourceTree = "<group>"; };
+		9170E9C720803B7E0097F130 /* STP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = "<group>"; };
+		9170E9C820803B7E0097F130 /* STP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STP.cpp; sourceTree = "<group>"; };
 		91D16F10207D421400C12951 /* Homework3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Homework3; sourceTree = BUILT_PRODUCTS_DIR; };
-		91D16F1A207D42DA00C12951 /* STP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STP.cpp; sourceTree = "<group>"; };
-		91D16F1C207D42DF00C12951 /* STP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = "<group>"; };
 		91D16F1D207D42E600C12951 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		91D16F1F207D42EC00C12951 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		91D16F20207D42F100C12951 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -70,9 +73,11 @@
 		91D16F12207D421400C12951 /* Homework3 */ = {
 			isa = PBXGroup;
 			children = (
-				91D16F1A207D42DA00C12951 /* STP.cpp */,
-				91D16F1C207D42DF00C12951 /* STP.h */,
 				91D16F25207D499600C12951 /* IDA.cpp */,
+				9170E9C820803B7E0097F130 /* STP.cpp */,
+				9170E9C720803B7E0097F130 /* STP.h */,
+				9170E9C420803B4B0097F130 /* DFID.cpp */,
+				9170E9C620803B5F0097F130 /* DFID.h */,
 				9170E9C1207D5B370097F130 /* heuristic.cpp */,
 				9170E9C2207D5B370097F130 /* heuristic.hpp */,
 				91D16F26207D499600C12951 /* IDA.hpp */,
@@ -141,9 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91D16F1B207D42DA00C12951 /* STP.cpp in Sources */,
+				9170E9C520803B4C0097F130 /* DFID.cpp in Sources */,
 				91D16F1E207D42E600C12951 /* Timer.cpp in Sources */,
 				91D16F27207D499600C12951 /* IDA.cpp in Sources */,
+				9170E9C920803B7E0097F130 /* STP.cpp in Sources */,
 				9170E9C3207D5B370097F130 /* heuristic.cpp in Sources */,
 				91D16F21207D42F200C12951 /* main.cpp in Sources */,
 			);
