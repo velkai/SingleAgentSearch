@@ -58,34 +58,34 @@ include CMakeFiles\SAS.dir\progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles\SAS.dir\flags.make
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj: ..\Homework3\Homework3\DFID.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/DFID.cpp.obj"
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj: CMakeFiles\SAS.dir\flags.make
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj: ..\Homework3\Homework3\STP.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\DFID.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
 <<
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/Homework3/Homework3/DFID.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\DFID.cpp"
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.i"
+	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
 <<
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/Homework3/Homework3/DFID.cpp.s"
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.s"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\DFID.cpp"
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
 <<
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.requires:
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires:
 
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.requires
+.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.provides: CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.provides
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides.build
+.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides
 
-CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj
+CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj
 
 
 CMakeFiles\SAS.dir\Homework3\Homework3\heuristic.cpp.obj: CMakeFiles\SAS.dir\flags.make
@@ -178,39 +178,9 @@ CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj.provides: CMakeFiles\SAS.dir
 CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj
 
 
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj: ..\Homework3\Homework3\STP.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/Homework3/Homework3/STP.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
-
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides
-
-CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj
-
-
 CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj: CMakeFiles\SAS.dir\flags.make
 CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj: ..\Homework3\Homework3\Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/Timer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/Timer.cpp.obj"
 	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\Timer.cpp"
 <<
@@ -238,219 +208,25 @@ CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj.provides: CMakeFiles\SAS.di
 CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj
 
 
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj: ..\SingleAgentSearch\Homework3\Homework3\heuristic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/heuristic.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\heuristic.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/heuristic.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\heuristic.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/heuristic.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\heuristic.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.requires
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.provides: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.provides
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.provides.build: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj
-
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj: ..\SingleAgentSearch\Homework3\Homework3\IDA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/IDA.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\IDA.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/IDA.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\IDA.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/IDA.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\IDA.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.requires
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.provides: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.provides
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.provides.build: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj
-
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj: ..\SingleAgentSearch\Homework3\Homework3\main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/main.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\main.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/main.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\main.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/main.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\main.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.requires
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.provides: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.provides
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.provides.build: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj
-
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj: ..\SingleAgentSearch\Homework3\Homework3\STP.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/STP.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/STP.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/STP.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\STP.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.requires
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.provides: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.provides
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.provides.build: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj
-
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj: ..\SingleAgentSearch\Homework3\Homework3\Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/Timer.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\Timer.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/Timer.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\Timer.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/SingleAgentSearch/Homework3/Homework3/Timer.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\SingleAgentSearch\Homework3\Homework3\Timer.cpp"
-<<
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.requires
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.provides: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.provides
-
-CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.provides.build: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj
-
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj: CMakeFiles\SAS.dir\flags.make
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj: ..\Homework3\Homework3\ManhattanDistance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/SAS.dir/Homework3/Homework3/ManhattanDistance.cpp.obj"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj /FdCMakeFiles\SAS.dir\ /FS -c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\ManhattanDistance.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SAS.dir/Homework3/Homework3/ManhattanDistance.cpp.i"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe > CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.i @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\ManhattanDistance.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SAS.dir/Homework3/Homework3/ManhattanDistance.cpp.s"
-	C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\cl.exe @<<
- /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.s /c "C:\Users\Jimmy Holmes\Desktop\SAS\Homework3\Homework3\ManhattanDistance.cpp"
-<<
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.requires:
-
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.requires
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.provides: CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.provides.build
-.PHONY : CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.provides
-
-CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.provides.build: CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj
-
-
 # Object files for target SAS
 SAS_OBJECTS = \
-"CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj" \
+"CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj" \
 "CMakeFiles\SAS.dir\Homework3\Homework3\heuristic.cpp.obj" \
 "CMakeFiles\SAS.dir\Homework3\Homework3\IDA.cpp.obj" \
 "CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj" \
-"CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj" \
-"CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj" \
-"CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj" \
-"CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj" \
-"CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj" \
-"CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj" \
-"CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj" \
-"CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj"
+"CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj"
 
 # External object files for target SAS
 SAS_EXTERNAL_OBJECTS =
 
-SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj
+SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj
 SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\heuristic.cpp.obj
 SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\IDA.cpp.obj
 SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj
 SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj
-SAS.exe: CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj
 SAS.exe: CMakeFiles\SAS.dir\build.make
 SAS.exe: CMakeFiles\SAS.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable SAS.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SAS.exe"
 	"C:\Program Files\JetBrains\CLion 2018.1.1\bin\cmake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\SAS.dir --manifests  -- C:\PROGRA~2\MICROS~2\2017\COMMUN~1\VC\Tools\MSVC\1412~1.258\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\SAS.dir\objects1.rsp @<<
  /out:SAS.exe /implib:SAS.lib /pdb:"C:\Users\Jimmy Holmes\Desktop\SAS\cmake-build-debug\SAS.pdb" /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<
@@ -460,18 +236,11 @@ CMakeFiles\SAS.dir\build: SAS.exe
 
 .PHONY : CMakeFiles\SAS.dir\build
 
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj.requires
+CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
 CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\heuristic.cpp.obj.requires
 CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\IDA.cpp.obj.requires
 CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\STP.cpp.obj.requires
 CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\Timer.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj.requires
-CMakeFiles\SAS.dir\requires: CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj.requires
 
 .PHONY : CMakeFiles\SAS.dir\requires
 

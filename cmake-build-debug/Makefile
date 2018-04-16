@@ -124,33 +124,6 @@ SAS\fast:
 	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\build
 .PHONY : SAS\fast
 
-Homework3\Homework3\DFID.obj: Homework3\Homework3\DFID.cpp.obj
-
-.PHONY : Homework3\Homework3\DFID.obj
-
-# target to build an object file
-Homework3\Homework3\DFID.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.obj
-.PHONY : Homework3\Homework3\DFID.cpp.obj
-
-Homework3\Homework3\DFID.i: Homework3\Homework3\DFID.cpp.i
-
-.PHONY : Homework3\Homework3\DFID.i
-
-# target to preprocess a source file
-Homework3\Homework3\DFID.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.i
-.PHONY : Homework3\Homework3\DFID.cpp.i
-
-Homework3\Homework3\DFID.s: Homework3\Homework3\DFID.cpp.s
-
-.PHONY : Homework3\Homework3\DFID.s
-
-# target to generate assembly for a file
-Homework3\Homework3\DFID.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\DFID.cpp.s
-.PHONY : Homework3\Homework3\DFID.cpp.s
-
 Homework3\Homework3\IDA.obj: Homework3\Homework3\IDA.cpp.obj
 
 .PHONY : Homework3\Homework3\IDA.obj
@@ -177,33 +150,6 @@ Homework3\Homework3\IDA.s: Homework3\Homework3\IDA.cpp.s
 Homework3\Homework3\IDA.cpp.s:
 	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\IDA.cpp.s
 .PHONY : Homework3\Homework3\IDA.cpp.s
-
-Homework3\Homework3\ManhattanDistance.obj: Homework3\Homework3\ManhattanDistance.cpp.obj
-
-.PHONY : Homework3\Homework3\ManhattanDistance.obj
-
-# target to build an object file
-Homework3\Homework3\ManhattanDistance.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.obj
-.PHONY : Homework3\Homework3\ManhattanDistance.cpp.obj
-
-Homework3\Homework3\ManhattanDistance.i: Homework3\Homework3\ManhattanDistance.cpp.i
-
-.PHONY : Homework3\Homework3\ManhattanDistance.i
-
-# target to preprocess a source file
-Homework3\Homework3\ManhattanDistance.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.i
-.PHONY : Homework3\Homework3\ManhattanDistance.cpp.i
-
-Homework3\Homework3\ManhattanDistance.s: Homework3\Homework3\ManhattanDistance.cpp.s
-
-.PHONY : Homework3\Homework3\ManhattanDistance.s
-
-# target to generate assembly for a file
-Homework3\Homework3\ManhattanDistance.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\ManhattanDistance.cpp.s
-.PHONY : Homework3\Homework3\ManhattanDistance.cpp.s
 
 Homework3\Homework3\STP.obj: Homework3\Homework3\STP.cpp.obj
 
@@ -313,141 +259,6 @@ Homework3\Homework3\main.cpp.s:
 	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\Homework3\Homework3\main.cpp.s
 .PHONY : Homework3\Homework3\main.cpp.s
 
-SingleAgentSearch\Homework3\Homework3\IDA.obj: SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.obj
-
-# target to build an object file
-SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.cpp.obj
-
-SingleAgentSearch\Homework3\Homework3\IDA.i: SingleAgentSearch\Homework3\Homework3\IDA.cpp.i
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.i
-
-# target to preprocess a source file
-SingleAgentSearch\Homework3\Homework3\IDA.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.i
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.cpp.i
-
-SingleAgentSearch\Homework3\Homework3\IDA.s: SingleAgentSearch\Homework3\Homework3\IDA.cpp.s
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.s
-
-# target to generate assembly for a file
-SingleAgentSearch\Homework3\Homework3\IDA.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\IDA.cpp.s
-.PHONY : SingleAgentSearch\Homework3\Homework3\IDA.cpp.s
-
-SingleAgentSearch\Homework3\Homework3\STP.obj: SingleAgentSearch\Homework3\Homework3\STP.cpp.obj
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.obj
-
-# target to build an object file
-SingleAgentSearch\Homework3\Homework3\STP.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.obj
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.cpp.obj
-
-SingleAgentSearch\Homework3\Homework3\STP.i: SingleAgentSearch\Homework3\Homework3\STP.cpp.i
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.i
-
-# target to preprocess a source file
-SingleAgentSearch\Homework3\Homework3\STP.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.i
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.cpp.i
-
-SingleAgentSearch\Homework3\Homework3\STP.s: SingleAgentSearch\Homework3\Homework3\STP.cpp.s
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.s
-
-# target to generate assembly for a file
-SingleAgentSearch\Homework3\Homework3\STP.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\STP.cpp.s
-.PHONY : SingleAgentSearch\Homework3\Homework3\STP.cpp.s
-
-SingleAgentSearch\Homework3\Homework3\Timer.obj: SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.obj
-
-# target to build an object file
-SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.cpp.obj
-
-SingleAgentSearch\Homework3\Homework3\Timer.i: SingleAgentSearch\Homework3\Homework3\Timer.cpp.i
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.i
-
-# target to preprocess a source file
-SingleAgentSearch\Homework3\Homework3\Timer.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.i
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.cpp.i
-
-SingleAgentSearch\Homework3\Homework3\Timer.s: SingleAgentSearch\Homework3\Homework3\Timer.cpp.s
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.s
-
-# target to generate assembly for a file
-SingleAgentSearch\Homework3\Homework3\Timer.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\Timer.cpp.s
-.PHONY : SingleAgentSearch\Homework3\Homework3\Timer.cpp.s
-
-SingleAgentSearch\Homework3\Homework3\heuristic.obj: SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.obj
-
-# target to build an object file
-SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.cpp.obj
-
-SingleAgentSearch\Homework3\Homework3\heuristic.i: SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.i
-
-# target to preprocess a source file
-SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.cpp.i
-
-SingleAgentSearch\Homework3\Homework3\heuristic.s: SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.s
-
-# target to generate assembly for a file
-SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s
-.PHONY : SingleAgentSearch\Homework3\Homework3\heuristic.cpp.s
-
-SingleAgentSearch\Homework3\Homework3\main.obj: SingleAgentSearch\Homework3\Homework3\main.cpp.obj
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.obj
-
-# target to build an object file
-SingleAgentSearch\Homework3\Homework3\main.cpp.obj:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.obj
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.cpp.obj
-
-SingleAgentSearch\Homework3\Homework3\main.i: SingleAgentSearch\Homework3\Homework3\main.cpp.i
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.i
-
-# target to preprocess a source file
-SingleAgentSearch\Homework3\Homework3\main.cpp.i:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.i
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.cpp.i
-
-SingleAgentSearch\Homework3\Homework3\main.s: SingleAgentSearch\Homework3\Homework3\main.cpp.s
-
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.s
-
-# target to generate assembly for a file
-SingleAgentSearch\Homework3\Homework3\main.cpp.s:
-	$(MAKE) -f CMakeFiles\SAS.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\SAS.dir\SingleAgentSearch\Homework3\Homework3\main.cpp.s
-.PHONY : SingleAgentSearch\Homework3\Homework3\main.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -457,15 +268,9 @@ help:
 	@echo ... SAS
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Homework3/Homework3/DFID.obj
-	@echo ... Homework3/Homework3/DFID.i
-	@echo ... Homework3/Homework3/DFID.s
 	@echo ... Homework3/Homework3/IDA.obj
 	@echo ... Homework3/Homework3/IDA.i
 	@echo ... Homework3/Homework3/IDA.s
-	@echo ... Homework3/Homework3/ManhattanDistance.obj
-	@echo ... Homework3/Homework3/ManhattanDistance.i
-	@echo ... Homework3/Homework3/ManhattanDistance.s
 	@echo ... Homework3/Homework3/STP.obj
 	@echo ... Homework3/Homework3/STP.i
 	@echo ... Homework3/Homework3/STP.s
@@ -478,21 +283,6 @@ help:
 	@echo ... Homework3/Homework3/main.obj
 	@echo ... Homework3/Homework3/main.i
 	@echo ... Homework3/Homework3/main.s
-	@echo ... SingleAgentSearch/Homework3/Homework3/IDA.obj
-	@echo ... SingleAgentSearch/Homework3/Homework3/IDA.i
-	@echo ... SingleAgentSearch/Homework3/Homework3/IDA.s
-	@echo ... SingleAgentSearch/Homework3/Homework3/STP.obj
-	@echo ... SingleAgentSearch/Homework3/Homework3/STP.i
-	@echo ... SingleAgentSearch/Homework3/Homework3/STP.s
-	@echo ... SingleAgentSearch/Homework3/Homework3/Timer.obj
-	@echo ... SingleAgentSearch/Homework3/Homework3/Timer.i
-	@echo ... SingleAgentSearch/Homework3/Homework3/Timer.s
-	@echo ... SingleAgentSearch/Homework3/Homework3/heuristic.obj
-	@echo ... SingleAgentSearch/Homework3/Homework3/heuristic.i
-	@echo ... SingleAgentSearch/Homework3/Homework3/heuristic.s
-	@echo ... SingleAgentSearch/Homework3/Homework3/main.obj
-	@echo ... SingleAgentSearch/Homework3/Homework3/main.i
-	@echo ... SingleAgentSearch/Homework3/Homework3/main.s
 .PHONY : help
 
 

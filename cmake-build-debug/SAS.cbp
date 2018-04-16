@@ -25,7 +25,6 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3"/>
-					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
@@ -48,7 +47,6 @@
 				<Option compiler="msvc8"/>
 				<Compiler>
 					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3"/>
-					<Add directory="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\ATLMFC\include"/>
 					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include"/>
 					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"/>
@@ -84,25 +82,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/DFID.h">
-			<Option target="SAS"/>
-		</Unit>
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.cpp">
 			<Option target="SAS"/>
 		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.hpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDAData.hpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/ManhattanDistance.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/ManhattanDistance.h">
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/IDA.h">
 			<Option target="SAS"/>
 		</Unit>
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/STP.cpp">
@@ -120,40 +103,10 @@
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.cpp">
 			<Option target="SAS"/>
 		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.hpp">
+		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/heuristic.h">
 			<Option target="SAS"/>
 		</Unit>
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/Homework3/Homework3/main.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDA.hpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/IDAData.hpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/STP.h">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/Timer.h">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.cpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/heuristic.hpp">
-			<Option target="SAS"/>
-		</Unit>
-		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/SingleAgentSearch/Homework3/Homework3/main.cpp">
 			<Option target="SAS"/>
 		</Unit>
 		<Unit filename="C:/Users/Jimmy Holmes/Desktop/SAS/CMakeLists.txt">

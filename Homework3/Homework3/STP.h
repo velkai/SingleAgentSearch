@@ -1,18 +1,13 @@
-//
-//  STP.h
-//  HW1
-//
+#pragma once
 
-#ifndef STP_h
-#define STP_h
-
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
+#include <random>
 
 const int kMaxWidth = 3;
 const int kMaxHeight = 5;
 
-enum STPSlideDir  {
+enum STPSlideDir {
 	kUp,
 	kDown,
 	kRight,
@@ -42,5 +37,3 @@ public:
 
 void DoRandomWalkSuccessors(STP &puzzle, STPState &s, int length);
 void DoRandomWalkOperators(STP &puzzle, STPState &s, int length);
-
-#endif /* STP_hpp */
