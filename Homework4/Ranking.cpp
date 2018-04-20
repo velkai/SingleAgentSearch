@@ -54,6 +54,88 @@ uint64_t Ranking::GetRank(STPState &s)
 	return EXPAND_STATE(TILES);
 }*/
 
+/*
+	---------------------------------------------------
+	ASK ABOUT THE BELOW FUNCTION
+	---------------------------------------------------
+*/
+uint64_t *Ranking::GetPDBRank(STPState &s) // returns a two-element uint64_t array, with index 0 being the rank for pattern A, and 1 being B's rank
+{
+	Dual a = GetDualA(s), b = GetDualB(s);
+
+	int *aTemp = new int[6], *bTemp = new int[7];
+
+	uint64_t *ret = new uint64_t[2];
+	uint64_t temp = a.n[0];
+
+	for (int i = 0; i < 6; ++i)
+	{
+		if (a.n[i] < temp)
+		{
+			--a.base;
+		}
+		aTemp[i] = a.n[i] * FACTORIAL(a.base);
+	}
+	temp = 0;
+	for (int i = 0; i < 6; ++i)
+	{
+		aTemp[i] /= FACTORIAL(a.base);
+		temp += aTemp[i];
+	}
+	ret[0] = temp;
+
+	temp = b.n[0];
+	for (int i = 0; i < 7; ++i)
+	{
+		if (b.n[i] < temp)
+		{
+			--b.base;
+		}
+		bTemp[i] = b.n[i] * FACTORIAL(b.base);
+	}
+	temp = 0;
+	for (int i = 0; i < 7; ++i)
+	{
+		bTemp[i] /= FACTORIAL(b.base);
+		temp += bTemp[i];
+	}
+	ret[1] = temp;
+
+	return ret;
+}
+
+Dual &Ranking::GetDualA(STPState &s)
+{
+	Dual d;
+	d.typeA();
+	for (int i = 0; i < 15; ++i)
+	{
+		if (*s.tiles[i] < 6)
+		{
+			d.n[*s.tiles[i]] = i;
+		}
+	}
+	return d;
+}
+
+Dual &Ranking::GetDualB(STPState &s)
+{
+	Dual d;
+	d.typeB();
+	for (int i = 0; i < 15; ++i)
+	{
+		if (*s.tiles[i] == 0)
+		{
+			d.n[0] = i;
+		}
+		else if (*s.tiles[i] >= 9 && *s.tiles[i] <= 14)
+		{
+			d.n[*s.tiles[i]-8] = i;
+		}
+	}
+	return d;
+}
+
 uint64_t Ranking::FACTORIAL(int n)
 {
 	uint64_t fact = 1;
