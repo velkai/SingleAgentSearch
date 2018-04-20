@@ -1,6 +1,15 @@
 #include "Ranking.h"
 #include <iostream>
 
+Ranking::Ranking()
+{
+	factorial = new uint64_t[15];
+	for (int i = 0; i < 15; ++i)
+	{
+		factorial[i] = FACTORIAL(i);
+	}
+}
+
 uint64_t Ranking::GetRank(STPState &s)
 {
 	uint64_t rank = 0, NUM_GREATER;
@@ -12,8 +21,8 @@ uint64_t Ranking::GetRank(STPState &s)
 		{
 			if (n[i] > n[j]) ++NUM_GREATER;
 		}
-		std::cout << NUM_GREATER << " " << FACTORIAL(14 - i) << "\n";
-		rank += NUM_GREATER*FACTORIAL(14-i);
+		std::cout << NUM_GREATER << " " << factorial[14 - i] << "\n";
+		rank += NUM_GREATER*factorial[14-i];
 	}
 
 	return rank;
@@ -55,86 +64,110 @@ uint64_t Ranking::GetRank(STPState &s)
 }*/
 
 /*
+	For PDB A: /9!
+	For PDB B: /8!
+
 	---------------------------------------------------
-	ASK ABOUT THE BELOW FUNCTION
+	ASK ABOUT THE BELOW FUNCTION - Done
 	---------------------------------------------------
+
+	PDB: (1, 3, 4)
+	Dual: (2, 5, 3)
+	Radix: (6, 5, 4)
+
+	Dual: (2, 4, 3)
+	Radix: (6, 5, 4)
+
+	Dual: (2, 4, 2)
+	Radix: (6, 5, 4)
+
+	Rank = (2*5! + 4*4! + 2*3!) / (# unconsidered, for this example, 3!)
 */
-uint64_t *Ranking::GetPDBRank(STPState &s) // returns a two-element uint64_t array, with index 0 being the rank for pattern A, and 1 being B's rank
+uint64_t *Ranking::GetPDBRank(STPState &s)
 {
-	Dual a = GetDualA(s), b = GetDualB(s);
-
-	int *aTemp = new int[6], *bTemp = new int[7];
-
+	int *n = COLLAPSE_STATE(s);
 	uint64_t *ret = new uint64_t[2];
-	uint64_t temp = a.n[0];
 
+	int *PDBA = new int[6], *DUALA = new int[6];
+	PDBA[0] = 0;
+	PDBA[1] = 1;
+	PDBA[2] = 2;
+	PDBA[3] = 3;
+	PDBA[4] = 4;
+	PDBA[5] = 5;
+	
+
+	int *PDBB = new int[7], *DUALB = new int[7];
+	PDBB[0] = 0;
+	PDBB[1] = 9;
+	PDBB[2] = 10;
+	PDBB[3] = 11;
+	PDBB[4] = 12;
+	PDBB[5] = 13;
+	PDBB[6] = 14;
+
+	// build duals
+	for (int i = 0; i < 15; ++i)
+	{
+		if (n[i] < 6)
+		{
+			DUALA[n[i]] = i;
+		}
+		if (n[i] == 0)
+		{
+			DUALB[0] = i;
+		}
+		else if (n[i] >= 9 && n[i] < 15)
+		{
+			DUALB[n[i]-8] = i;
+		}
+	}
+
+	// refine DUALA
 	for (int i = 0; i < 6; ++i)
 	{
-		if (a.n[i] < temp)
+		for (int j = i; j < 6; ++j)
 		{
-			--a.base;
+			if (DUALA[i] < DUALA[j])
+			{
+				--DUALA[j];
+			}
 		}
-		aTemp[i] = a.n[i] * FACTORIAL(a.base);
 	}
-	temp = 0;
+
+	// get rank for PDB A
+	uint64_t rank = 0;
 	for (int i = 0; i < 6; ++i)
 	{
-		aTemp[i] /= FACTORIAL(a.base);
-		temp += aTemp[i];
+		rank += DUALA[i] * factorial[14-i];
 	}
-	ret[0] = temp;
+	rank /= factorial[9];
+	ret[0] = rank;
 
-	temp = b.n[0];
+	// refine DUALB
 	for (int i = 0; i < 7; ++i)
 	{
-		if (b.n[i] < temp)
+		for (int j = i; j < 7; ++j)
 		{
-			--b.base;
+			if (DUALB[i] < DUALB[j])
+			{
+				--DUALB[j];
+			}
 		}
-		bTemp[i] = b.n[i] * FACTORIAL(b.base);
 	}
-	temp = 0;
+
+	// get rank for PDB B
+	rank = 0;
 	for (int i = 0; i < 7; ++i)
 	{
-		bTemp[i] /= FACTORIAL(b.base);
-		temp += bTemp[i];
+		rank += DUALB[i] * factorial[14 - i];
 	}
-	ret[1] = temp;
+	rank /= factorial[8];
+	ret[1] = rank;
 
 	return ret;
 }
 
-Dual &Ranking::GetDualA(STPState &s)
-{
-	Dual d;
-	d.typeA();
-	for (int i = 0; i < 15; ++i)
-	{
-		if (*s.tiles[i] < 6)
-		{
-			d.n[*s.tiles[i]] = i;
-		}
-	}
-	return d;
-}
-
-Dual &Ranking::GetDualB(STPState &s)
-{
-	Dual d;
-	d.typeB();
-	for (int i = 0; i < 15; ++i)
-	{
-		if (*s.tiles[i] == 0)
-		{
-			d.n[0] = i;
-		}
-		else if (*s.tiles[i] >= 9 && *s.tiles[i] <= 14)
-		{
-			d.n[*s.tiles[i]-8] = i;
-		}
-	}
-	return d;
-}
 
 uint64_t Ranking::FACTORIAL(int n)
 {

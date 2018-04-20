@@ -46,11 +46,16 @@ int main(int argc, const char * argv[])
 	Ranking *r = new Ranking();
 	STPState *s = new STPState();
 	STP *puzzle = new STP();
+	uint64_t *test;
 
-	DoRandomWalkSuccessors(*puzzle, *s, 20);
-	print(*s);
-	uint64_t rank = r->GetRank(*s);
-	std::cout << rank << "\n\n";
+	for (int i = 0; i < 10; ++i)
+	{
+		DoRandomWalkSuccessors(*puzzle, *s, i);
+		print(*s);
+		std::cout << i << " : A-";
+		test = r->GetPDBRank(*s);
+		std::cout << test[0] << " B-" << test[1] << "\n";
+	}
 
 	std::cout << "\nNice.\n";
 
