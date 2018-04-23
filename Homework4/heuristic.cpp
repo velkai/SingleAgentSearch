@@ -1,5 +1,7 @@
 #include "heuristic.h"
 
+void print1(STPState &s);
+
 heuristic::heuristic()
 {
 	FCOST = GCOST = HCOST = 0;
@@ -53,71 +55,16 @@ PatternDatabase::PatternDatabase()
 	ASize = BSize = 0;
 	INITIALIZE_ARRAYS();
 
-	Ranking *r = new Ranking();
-	STPState *s = new STPState(), *GOAL = new STPState();
-	STP *puzzle = new STP();
-	//BFS *bfs;
-	DFID *dfid;
-	std::vector<STPSlideDir> *operators;
-	STPSlideDir previous = kNone;
+	std::cout << "Building A... ";
+	BUILD_PDB_A();
+	std::cout << "Complete\n";
 
-	uint64_t *temp = new uint64_t[2];
-
-	while (ASize != 3603600 && BSize != 32432400)
-	{
-		// so I don't lose my mind waiting
-		if (ASize == 720720) std::cout << "A at 20%\n";
-		if (ASize == 1441440) std::cout << "A at 40%\n";
-		if (ASize == 2162160) std::cout << "A at 60%\n";
-		if (ASize == 2882880) std::cout << "A at 80%\n";
-		if (ASize == 3603599) std::cout << "A at 100%\n";
-		if (BSize == 6486480) std::cout << "B at 20%\n";
-		if (BSize == 12972960) std::cout << "B at 40%\n";
-		if (BSize == 19459440) std::cout << "B at 60%\n";
-		if (BSize == 25945920) std::cout << "B at 80%\n";
-		if (BSize == 32432399) std::cout << "B at 99%\n";
-
-		operators = new std::vector<STPSlideDir>();
-		//bfs = new BFS();
-		dfid = new DFID();
-		puzzle->GetOperators(*s, *operators);
-		temp = r->GetPDBRank(*s);
-
-		int index = rand() % operators->size();
-		while (operators->at(index) == OPPOSITE(previous))
-		{
-			index = rand() % operators->size();
-		}
-		puzzle->ApplyOperator(*s, operators->at(index));
-
-		bool a, b, c, d;
-		a = ASize != 3603600;
-		b = BSize != 32432400;
-		c = !CONTAINED('A', temp[0]);
-		d = !CONTAINED('B', temp[1]);
-
-		if(a && c || b && d)
-		{
-			uint8_t depth = dfid->GetPath(*puzzle, *GOAL, *s);
-			if (a && c)
-			{
-				std::cout << "A\n";
-				A[temp[0]] = depth;
-				++ASize;
-			}
-			if (b && d)
-			{
-				std::cout << "B\n";
-				B[temp[1]] = depth;
-				++BSize;
-			}
-		}
-
-		delete[] temp;
-		delete operators;
-		//delete bfs;
-		delete dfid;
-	}
+	std::cout << 140 << " : " << (int)A[140] << "\n";
+	std::cout << 1487 << " : " << (int)A[1487] << "\n";
+	std::cout << 51069 << " : " << (int)A[51069] << "\n";
+	std::cout << 76509 << " : " << (int)A[76509] << "\n";
+	std::cout << 116888 << " : " << (int)A[116888] << "\n";
+	std::cout << 7331 << " : " << (int)A[7331] << "\n";
 
 	std::cout << "Success\n";
 }
@@ -177,4 +124,76 @@ STPSlideDir PatternDatabase::OPPOSITE(STPSlideDir o)
 		return kLeft;
 	}
 	return kNone;
+}
+
+void PatternDatabase::BUILD_PDB_A()
+{
+	STP *puzzle = new STP();
+	Ranking *r = new Ranking();
+	uint64_t rank;
+
+	std::deque<PDB_BUILD_NODE> *q = new std::deque<PDB_BUILD_NODE>();
+	std::vector<STPSlideDir> *operators;
+
+	PDB_BUILD_NODE GOAL; GOAL.s = new STPState(); GOAL.depth = 0;
+	PDB_BUILD_NODE CURSOR;
+	BFS *bfs = new BFS();
+
+	q->push_back(GOAL);
+
+	int currDepth = 0;
+	while (!q->empty())
+	{
+		CURSOR = q->front();
+
+		if (CURSOR.depth != currDepth)
+		{
+			currDepth = CURSOR.depth;
+		}
+
+		rank = r->GetPDBRank(*CURSOR.s)[0];
+		if (!CONTAINED('A', rank))
+		{
+			//print1(*CURSOR.s);
+			operators = new std::vector<STPSlideDir>();
+			puzzle->GetOperators(*CURSOR.s, *operators);
+
+			for (int i = 0; i < operators->size(); ++i)
+			{
+				PDB_BUILD_NODE temp;
+
+				temp.s = new STPState(*CURSOR.s);
+				temp.depth = CURSOR.depth + 1;
+
+				puzzle->ApplyOperator(*temp.s, operators->at(i));
+				q->push_back(temp);
+			}
+
+			A[rank] = CURSOR.depth;
+			delete operators;
+		}
+
+		q->pop_front();
+	}
+
+}
+
+void print1(STPState &s)
+{
+	std::cout << " ___________ \n|           |\n";
+	for (int h = 0; h < 5; ++h)
+	{
+		std::cout << "| ";
+		for (int w = 0; w < 3; ++w)
+		{
+			std::cout << " ";
+			if (s.tiles[w][h] > 9)
+			{
+				std::cout << s.tiles[w][h];
+			}
+			else std::cout << s.tiles[w][h] << " ";
+		}
+		std::cout << " |\n";
+	}
+	std::cout << "|___________|\n";
 }

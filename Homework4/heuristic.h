@@ -38,6 +38,17 @@ private:
 	int DISTANCE_FROM_GOAL(int x, int y, int value);
 };
 
+struct PDB_BUILD_NODE
+{
+	PDB_BUILD_NODE()
+	{
+		depth = 0;
+	}
+
+	STPState *s;
+	int depth;
+};
+
 class PatternDatabase : public heuristic
 {
 public:
@@ -55,4 +66,6 @@ private:
 	bool CONTAINED(char c, uint64_t rank); // c will either be 'A', or 'B'
 	STPSlideDir OPPOSITE(STPSlideDir o);
 	void INITIALIZE_ARRAYS();
+	void BUILD_PDB_A();
+	void BUILD_PDB_B();
 };

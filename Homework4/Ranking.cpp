@@ -74,6 +74,11 @@ STPState *Ranking::Unrank(uint64_t rank)
 uint64_t *Ranking::GetPDBRank(STPState &s)
 {
 	int *n = COLLAPSE_STATE(s);
+	/*for (int i = 0; i < 15; ++i)
+	{
+		std::cout << n[i] << " ";
+	}
+	std::cout << std::endl;*/
 	uint64_t *ret = new uint64_t[2];
 
 	int *PDBA = new int[6], *DUALA = new int[6];
