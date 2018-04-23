@@ -1,6 +1,7 @@
 #pragma once
 
 #include "STP.h"
+#include <unordered_map>
 
 class Ranking
 {
@@ -9,7 +10,7 @@ public:
 	Ranking();
 
 	uint64_t GetRank(STPState &s);
-	//STPState *Unrank(uint64_t rank);
+	STPState *Unrank(uint64_t rank); // untested
 	uint64_t *GetPDBRank(STPState &s);
 
 private:

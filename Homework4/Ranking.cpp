@@ -28,40 +28,28 @@ uint64_t Ranking::GetRank(STPState &s)
 	return rank;
 }
 
-/*STPState *Ranking::Unrank(uint64_t rank)
+STPState *Ranking::Unrank(uint64_t rank)
 {
-	int *n = new int[15], *VALUE_BANK = new int[15], *TILES = new int[15];
-
+	int *n = new int[15], *TILES = new int[15];
+	std::unordered_map<int, int> *VALUE_BANK = new std::unordered_map<int, int>();
 	for (int i = 14; i >= 0; --i)
 	{
 		uint64_t fact = FACTORIAL(i);
 		std::cout << rank << " " << fact << "\n";
 		n[14-i] = rank / fact;
 		rank = rank % fact;
-		VALUE_BANK[14-i] = 14 - i;
+		VALUE_BANK->insert({14-i, 14-i});
 	}
 
 	for (int i = 0; i < 15; ++i) // FIX: Need to 'remove' values from VALUE_BANK array
 	{
-		std::cout << n[i] << " ";
 		int j = n[i];
-		while (VALUE_BANK[j] == -1)
-		{
-			++j;
-		}
-		for (int k = 0; k < 15; ++k)
-		{
-			std::cout << VALUE_BANK[k] << ",";
-		}
-		std::cout << std::endl;
-
-		TILES[i] = VALUE_BANK[j];
-		VALUE_BANK[j] = -1;
+		TILES[i] = VALUE_BANK->at(j);
+		VALUE_BANK->erase(j);
 	}
-	std::cout << "\n";
 
 	return EXPAND_STATE(TILES);
-}*/
+}
 
 /*
 	For PDB A: /9!

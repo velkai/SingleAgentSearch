@@ -1,7 +1,11 @@
 #pragma once
 
 #include "STP.h"
+#include "Ranking.h"
+#include "BFS.h"
+#include "DFID.h"
 #include <iostream>
+#include <cstdlib>
 #include <deque>
 
 class heuristic
@@ -19,7 +23,7 @@ public:
 	int HCOST;
 };
 
-class ManhattanDistance :public heuristic
+class ManhattanDistance : public heuristic
 {
 public:
 
@@ -32,4 +36,23 @@ public:
 private:
 
 	int DISTANCE_FROM_GOAL(int x, int y, int value);
+};
+
+class PatternDatabase : public heuristic
+{
+public:
+
+	PatternDatabase();
+
+	void updateFCost(STPState &s, std::deque<STPState> &path);
+	void updateGCost(std::deque<STPState> &path);
+	void updateHCost(STPState &s);
+
+private:
+
+	uint8_t * A, *B;
+	int ASize, BSize;
+	bool CONTAINED(char c, uint64_t rank); // c will either be 'A', or 'B'
+	STPSlideDir OPPOSITE(STPSlideDir o);
+	void INITIALIZE_ARRAYS();
 };

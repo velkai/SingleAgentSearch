@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <iostream>
 #include "heuristic.h"
 #include "Timer.h"
@@ -43,7 +45,7 @@ int main(int argc, const char * argv[])
 		}
 	}*/
 
-	Ranking *r = new Ranking();
+	/*Ranking *r = new Ranking();
 	STPState *s = new STPState();
 	STP *puzzle = new STP();
 	uint64_t *test;
@@ -55,7 +57,9 @@ int main(int argc, const char * argv[])
 		std::cout << i << " : A-";
 		test = r->GetPDBRank(*s);
 		std::cout << test[0] << " B-" << test[1] << "\n";
-	}
+	}*/
+
+	PatternDatabase *h = new PatternDatabase();
 
 	std::cout << "\nNice.\n";
 
