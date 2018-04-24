@@ -45,7 +45,7 @@ struct PDB_BUILD_NODE
 		depth = 0;
 	}
 
-	STPState *s;
+	STPState s;
 	int depth;
 };
 
@@ -58,14 +58,16 @@ public:
 	void updateFCost(STPState &s, std::deque<STPState> &path);
 	void updateGCost(std::deque<STPState> &path);
 	void updateHCost(STPState &s);
+	
 
 private:
 
-	uint8_t * A, *B;
+	uint8_t *A, *B;
 	int ASize, BSize;
 	bool CONTAINED(char c, uint64_t rank); // c will either be 'A', or 'B'
 	STPSlideDir OPPOSITE(STPSlideDir o);
 	void INITIALIZE_ARRAYS();
 	void BUILD_PDB_A();
 	void BUILD_PDB_B();
+	
 };

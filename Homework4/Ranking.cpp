@@ -74,11 +74,6 @@ STPState *Ranking::Unrank(uint64_t rank)
 uint64_t *Ranking::GetPDBRank(STPState &s)
 {
 	int *n = COLLAPSE_STATE(s);
-	/*for (int i = 0; i < 15; ++i)
-	{
-		std::cout << n[i] << " ";
-	}
-	std::cout << std::endl;*/
 	uint64_t *ret = new uint64_t[2];
 
 	int *PDBA = new int[6], *DUALA = new int[6];
@@ -128,14 +123,22 @@ uint64_t *Ranking::GetPDBRank(STPState &s)
 		}
 	}
 
+	uint64_t rank = DUALA[0];
+	for (int i = 1; i < 6; ++i)
+	{
+		rank *= 15 - i;
+		rank += DUALA[i];
+	}
+	ret[0] = rank;
+
 	// get rank for PDB A
-	uint64_t rank = 0;
+	/*uint64_t rank = 0;
 	for (int i = 0; i < 6; ++i)
 	{
 		rank += DUALA[i] * factorial[14-i];
 	}
 	rank /= factorial[9];
-	ret[0] = rank;
+	ret[0] = rank;*/
 
 	// refine DUALB
 	for (int i = 0; i < 7; ++i)
@@ -149,14 +152,24 @@ uint64_t *Ranking::GetPDBRank(STPState &s)
 		}
 	}
 
+	rank = DUALB[0];
+	for (int i = 1; i < 7; ++i)
+	{
+		rank *= 15 - i;
+		rank += DUALB[i];
+	}
+	ret[1] = rank;
+
 	// get rank for PDB B
-	rank = 0;
+	/*rank = 0;
 	for (int i = 0; i < 7; ++i)
 	{
 		rank += DUALB[i] * factorial[14 - i];
 	}
 	rank /= factorial[8];
-	ret[1] = rank;
+	ret[1] = rank;*/
+
+	delete[] DUALA, DUALB, PDBA, PDBB;
 
 	return ret;
 }

@@ -59,7 +59,16 @@ int main(int argc, const char * argv[])
 		std::cout << test[0] << " B-" << test[1] << "\n";
 	}*/
 
-	PatternDatabase *h = new PatternDatabase();
+	/*STP puzzle;
+	STPState s;
+	Ranking r;
+
+	DoRandomWalkOperators(puzzle, s, 6);
+	print(s);
+	std::cout << r.GetPDBRank(s)[0] << "\n";*/
+
+
+	PatternDatabase h;
 
 	std::cout << "\nNice.\n";
 

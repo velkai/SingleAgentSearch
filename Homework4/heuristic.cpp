@@ -48,8 +48,6 @@ int ManhattanDistance::DISTANCE_FROM_GOAL(int x, int y, int value)
 
 PatternDatabase::PatternDatabase()
 {
-	std::cout << "Building PDB...\n";
-
 	A = new uint8_t[3603600];
 	B = new uint8_t[32432400];
 	ASize = BSize = 0;
@@ -59,12 +57,9 @@ PatternDatabase::PatternDatabase()
 	BUILD_PDB_A();
 	std::cout << "Complete\n";
 
-	std::cout << 140 << " : " << (int)A[140] << "\n";
-	std::cout << 1487 << " : " << (int)A[1487] << "\n";
-	std::cout << 51069 << " : " << (int)A[51069] << "\n";
-	std::cout << 76509 << " : " << (int)A[76509] << "\n";
-	std::cout << 116888 << " : " << (int)A[116888] << "\n";
-	std::cout << 7331 << " : " << (int)A[7331] << "\n";
+	std::cout << "Building B... ";
+	BUILD_PDB_B();
+	std::cout << "Complete\n";
 
 	std::cout << "Success\n";
 }
@@ -128,52 +123,90 @@ STPSlideDir PatternDatabase::OPPOSITE(STPSlideDir o)
 
 void PatternDatabase::BUILD_PDB_A()
 {
-	STP *puzzle = new STP();
-	Ranking *r = new Ranking();
+	STP puzzle;
+	Ranking r;
 	uint64_t rank;
 
-	std::deque<PDB_BUILD_NODE> *q = new std::deque<PDB_BUILD_NODE>();
-	std::vector<STPSlideDir> *operators;
+	std::deque<PDB_BUILD_NODE> q;
 
-	PDB_BUILD_NODE GOAL; GOAL.s = new STPState(); GOAL.depth = 0;
+	
+	PDB_BUILD_NODE GOAL; GOAL.s; GOAL.depth = 0;
 	PDB_BUILD_NODE CURSOR;
-	BFS *bfs = new BFS();
 
-	q->push_back(GOAL);
+	q.push_back(GOAL);
 
-	int currDepth = 0;
-	while (!q->empty())
+	while (!q.empty())
 	{
-		CURSOR = q->front();
+		CURSOR = q.front();
 
-		if (CURSOR.depth != currDepth)
-		{
-			currDepth = CURSOR.depth;
-		}
-
-		rank = r->GetPDBRank(*CURSOR.s)[0];
+		rank = r.GetPDBRank(CURSOR.s)[0];
 		if (!CONTAINED('A', rank))
 		{
-			//print1(*CURSOR.s);
-			operators = new std::vector<STPSlideDir>();
-			puzzle->GetOperators(*CURSOR.s, *operators);
+			std::vector<STPSlideDir> operators;
 
-			for (int i = 0; i < operators->size(); ++i)
+			puzzle.GetOperators(CURSOR.s, operators);
+
+			for (int i = 0; i < operators.size(); ++i)
 			{
 				PDB_BUILD_NODE temp;
 
-				temp.s = new STPState(*CURSOR.s);
+				temp.s = CURSOR.s;
+
 				temp.depth = CURSOR.depth + 1;
 
-				puzzle->ApplyOperator(*temp.s, operators->at(i));
-				q->push_back(temp);
+				puzzle.ApplyOperator(temp.s, operators.at(i));
+				q.push_back(temp);
 			}
 
 			A[rank] = CURSOR.depth;
-			delete operators;
 		}
 
-		q->pop_front();
+		q.pop_front();
+	}
+
+}
+
+void PatternDatabase::BUILD_PDB_B()
+{
+	STP puzzle;
+	Ranking r;
+	uint64_t rank;
+
+	std::deque<PDB_BUILD_NODE> q;
+
+
+	PDB_BUILD_NODE GOAL; GOAL.s; GOAL.depth = 0;
+	PDB_BUILD_NODE CURSOR;
+
+	q.push_back(GOAL);
+
+	while (!q.empty())
+	{
+		CURSOR = q.front();
+
+		rank = r.GetPDBRank(CURSOR.s)[1];
+		if (!CONTAINED('B', rank))
+		{
+			std::vector<STPSlideDir> operators;
+
+			puzzle.GetOperators(CURSOR.s, operators);
+
+			for (int i = 0; i < operators.size(); ++i)
+			{
+				PDB_BUILD_NODE temp;
+
+				temp.s = CURSOR.s;
+
+				temp.depth = CURSOR.depth + 1;
+
+				puzzle.ApplyOperator(temp.s, operators.at(i));
+				q.push_back(temp);
+			}
+
+			B[rank] = CURSOR.depth;
+		}
+
+		q.pop_front();
 	}
 
 }

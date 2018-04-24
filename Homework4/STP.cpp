@@ -46,6 +46,19 @@ void STPState::Reset()
 	}
 }
 
+void STPState::operator=(const STPState &source)
+{
+	this->blankx = source.blankx;
+	this->blanky = source.blanky;
+	for (int w = 0; w < 3; ++w)
+	{
+		for (int h = 0; h < 5; ++h)
+		{
+			this->tiles[w][h] = source.tiles[w][h];
+		}
+	}
+}
+
 void STP::GetSuccessors(STPState &s, std::vector<STPState> &states)
 {
 	states.clear();

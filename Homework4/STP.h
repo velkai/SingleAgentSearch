@@ -21,6 +21,8 @@ public:
 	void Reset(); // Reset to goal state
 	int tiles[kMaxWidth][kMaxHeight];
 	int blankx, blanky;
+	void operator=(const STPState &source);
+
 };
 
 std::ostream& operator<<(std::ostream& out, const STPState& s);
