@@ -66,6 +66,7 @@ private:
 	int ASize, BSize;
 	bool CONTAINED(char c, uint64_t rank); // c will either be 'A', or 'B'
 	STPSlideDir OPPOSITE(STPSlideDir o);
+	Ranking r;
 	void INITIALIZE_ARRAYS();
 	void BUILD_PDB_A();
 	void BUILD_PDB_B();

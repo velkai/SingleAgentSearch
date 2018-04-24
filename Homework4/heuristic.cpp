@@ -53,10 +53,11 @@ PatternDatabase::PatternDatabase()
 	ASize = BSize = 0;
 	INITIALIZE_ARRAYS();
 
+	FCOST = GCOST = HCOST = 0;
+
 	std::cout << "Building A... ";
 	BUILD_PDB_A();
 	std::cout << "Complete\n";
-
 	std::cout << "Building B... ";
 	BUILD_PDB_B();
 	std::cout << "Complete\n";
@@ -88,7 +89,10 @@ void PatternDatabase::updateGCost(std::deque<STPState> &path)
 
 void PatternDatabase::updateHCost(STPState &s)
 {
-
+	uint64_t *rank = r.GetPDBRank(s);
+	bool A_LARGER = rank[0] >= rank[1];
+	if (A_LARGER) HCOST = A[rank[0]];
+	else HCOST = B[rank[1]];
 }
 
 void PatternDatabase::INITIALIZE_ARRAYS()
@@ -124,91 +128,85 @@ STPSlideDir PatternDatabase::OPPOSITE(STPSlideDir o)
 void PatternDatabase::BUILD_PDB_A()
 {
 	STP puzzle;
-	Ranking r;
 	uint64_t rank;
 
 	std::deque<PDB_BUILD_NODE> q;
 
-	
+	// if a node is on the queue, it has been added to the pdb and is waiting for its children to be expanded
+
 	PDB_BUILD_NODE GOAL; GOAL.s; GOAL.depth = 0;
 	PDB_BUILD_NODE CURSOR;
 
+	rank = r.GetPDBRank(GOAL.s)[0];
+	A[rank] = GOAL.depth;
 	q.push_back(GOAL);
 
 	while (!q.empty())
 	{
 		CURSOR = q.front();
-
-		rank = r.GetPDBRank(CURSOR.s)[0];
-		if (!CONTAINED('A', rank))
+		q.pop_front();
+		// force stuff to go out of scope so it isn't my fault when I run out of RAM
 		{
 			std::vector<STPSlideDir> operators;
-
 			puzzle.GetOperators(CURSOR.s, operators);
-
-			for (int i = 0; i < operators.size(); ++i)
+			for (auto o : operators)
 			{
-				PDB_BUILD_NODE temp;
+				PDB_BUILD_NODE temp = CURSOR;
 
-				temp.s = CURSOR.s;
-
-				temp.depth = CURSOR.depth + 1;
-
-				puzzle.ApplyOperator(temp.s, operators.at(i));
-				q.push_back(temp);
+				puzzle.ApplyOperator(temp.s, o);
+				++temp.depth;
+				
+				rank = r.GetPDBRank(temp.s)[0];
+				if (!CONTAINED('A', rank))
+				{
+					q.push_back(temp);
+					A[rank] = temp.depth;
+				}
 			}
-
-			A[rank] = CURSOR.depth;
 		}
-
-		q.pop_front();
 	}
-
 }
 
 void PatternDatabase::BUILD_PDB_B()
 {
 	STP puzzle;
-	Ranking r;
 	uint64_t rank;
 
 	std::deque<PDB_BUILD_NODE> q;
 
+	// if a node is on the queue, it has been added to the pdb and is waiting for its children to be expanded
 
 	PDB_BUILD_NODE GOAL; GOAL.s; GOAL.depth = 0;
 	PDB_BUILD_NODE CURSOR;
 
+	rank = r.GetPDBRank(GOAL.s)[1];
+	B[rank] = GOAL.depth;
 	q.push_back(GOAL);
 
 	while (!q.empty())
 	{
 		CURSOR = q.front();
-
-		rank = r.GetPDBRank(CURSOR.s)[1];
-		if (!CONTAINED('B', rank))
+		q.pop_front();
+		// force stuff to go out of scope so it isn't my fault when I run out of RAM
 		{
 			std::vector<STPSlideDir> operators;
-
 			puzzle.GetOperators(CURSOR.s, operators);
-
-			for (int i = 0; i < operators.size(); ++i)
+			for (auto o : operators)
 			{
-				PDB_BUILD_NODE temp;
+				PDB_BUILD_NODE temp = CURSOR;
 
-				temp.s = CURSOR.s;
+				puzzle.ApplyOperator(temp.s, o);
+				++temp.depth;
 
-				temp.depth = CURSOR.depth + 1;
-
-				puzzle.ApplyOperator(temp.s, operators.at(i));
-				q.push_back(temp);
+				rank = r.GetPDBRank(temp.s)[1];
+				if (!CONTAINED('B', rank))
+				{
+					q.push_back(temp);
+					B[rank] = temp.depth;
+				}
 			}
-
-			B[rank] = CURSOR.depth;
 		}
-
-		q.pop_front();
 	}
-
 }
 
 void print1(STPState &s)
