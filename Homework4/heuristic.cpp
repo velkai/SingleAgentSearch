@@ -1,4 +1,5 @@
 #include "heuristic.h"
+#include "Timer.h"
 
 void print1(STPState &s);
 
@@ -207,6 +208,57 @@ void PatternDatabase::BUILD_PDB_B()
 			}
 		}
 	}
+}
+
+void PatternDatabase::printTests()
+{
+	std::cout << "A\n";
+	std::cout << 53 << " : " << (int)A[53] << "\n";
+	std::cout << 78 << " : " << (int)A[78] << "\n";
+	std::cout << 140 << " : " << (int)A[140] << "\n";
+	std::cout << 3662 << " : " << (int)A[3662] << "\n";
+	std::cout << 8412 << " : " << (int)A[8412] << "\n";
+	std::cout << 13285 << " : " << (int)A[13285] << "\n"; 
+	std::cout << 44669 << " : " << (int)A[44669] << "\n";
+	std::cout << 51069 << " : " << (int)A[51069] << "\n";
+	std::cout << 69998 << " : " << (int)A[69998] << "\n";
+	std::cout << 108545 << " : " << (int)A[108545] << "\n";
+	std::cout << 146533 << " : " << (int)A[146533] << "\n";
+	std::cout << 184448 << " : " << (int)A[184448] << "\n";
+	std::cout << 207344 << " : " << (int)A[207344] << "\n";
+	std::cout << 208040 << " : " << (int)A[208040] << "\n";
+	std::cout << 116888 << " : " << (int)A[116888] << "\n";
+	std::cout << 40866 << " : " << (int)A[40866] << "\n";
+	std::cout << 7331 << " : " << (int)A[7331] << "\n";
+	std::cout << 62 << " : " << (int)A[62] << "\n";
+
+	std::cout << "B\n";
+	std::cout << 1 << " : " << (int)B[1] << "\n";
+		std::cout << 54 << " : " << (int)B[54] << "\n";
+		std::cout << 98 << " : " << (int)B[98] << "\n";
+		std::cout << 184 << " : " << (int)B[184] << "\n";
+		std::cout << 294 << " : " << (int)B[294] << "\n";
+		std::cout << 17564 << " : " << (int)B[17564] << "\n";
+		std::cout << 29623 << " : " << (int)B[29623] << "\n";
+		std::cout << 41898 << " : " << (int)B[41898] << "\n";
+		std::cout << 68189 << " : " << (int)B[68189] << "\n";
+		std::cout << 266385 << " : " << (int)B[266385] << "\n";
+		std::cout << 319689 << " : " << (int)B[319689] << "\n";
+		std::cout << 789805 << " : " << (int)B[789805] << "\n";
+		std::cout << 1062662 << " : " << (int)B[1062662] << "\n";
+		std::cout << 1117571 << " : " << (int)B[1117571] << "\n";
+		std::cout << 1453505 << " : " << (int)B[1453505] << "\n";
+		std::cout << 1457091 << " : " << (int)B[1457091] << "\n";
+		std::cout << 1820909 << " : " << (int)B[1820909] << "\n";
+		std::cout << 1730218 << " : " << (int)B[1730218] << "\n";
+		std::cout << 1644785 << " : " << (int)B[1644785] << "\n";
+		std::cout << 167802 << " : " << (int)B[167802] << "\n";
+		std::cout << 133293 << " : " << (int)B[133293] << "\n";
+		std::cout << 68521 << " : " << (int)B[68521] << "\n";
+		std::cout << 2605 << " : " << (int)B[2605] << "\n";
+		std::cout << 508 << " : " << (int)B[508] << "\n";
+		std::cout << 252 << " : " << (int)B[252] << "\n";
+
 }
 
 void print1(STPState &s)

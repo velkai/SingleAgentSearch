@@ -67,8 +67,10 @@ int main(int argc, const char * argv[])
 	print(s);
 	std::cout << r.GetPDBRank(s)[0] << "\n";*/
 
+	std::cout << "This program is a memory hog, but we're not sure how to fix this. Be careful of your memory when you run it\n";
 
 	PatternDatabase h;
+	h.printTests();
 
 	std::cout << "\nNice.\n";
 
