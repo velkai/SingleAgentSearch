@@ -58,6 +58,8 @@ public:
 	void updateFCost(STPState &s, std::deque<STPState> &path);
 	void updateGCost(std::deque<STPState> &path);
 	void updateHCost(STPState &s);
+
+	void printTests();
 	
 
 private:
