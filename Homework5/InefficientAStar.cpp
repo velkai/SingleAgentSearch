@@ -25,7 +25,17 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 	{
 		A_STAR_NODE curr = GET_BEST();
 
-		if (curr.s == goal) return RECONSTRUCT_PATH(puzzle, curr);
+		if (curr.s == goal)
+		{
+			std::cout << "Path found\n\n\n";
+			for (auto i : LIST)
+			{
+				print(i.s);
+				std::cout << i.parent << "\n";
+			}
+			std::cout << "\n";
+			return RECONSTRUCT_PATH(puzzle, curr);
+		}
 
 		std::vector<STPSlideDir> operators;
 		if (!operators.empty()) std::cout << "ERROR 1\n";
@@ -34,24 +44,34 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 		for (auto o : operators)
 		{
 			A_STAR_NODE neighbor;
-			neighbor.set(curr);
-			puzzle.ApplyOperator(neighbor.s, o);
+			neighbor.set(curr, puzzle, o);
 			neighbor.open();
-			print(neighbor.s);
+			//print(neighbor.s);
 
-			if (DUPLICATE_CHECK_C(neighbor.s))	continue;
+			if (DUPLICATE_CHECK_C(neighbor.s))
+			{
+				print(neighbor.s); std::cout << "IS CLOSED\n";
+				continue;
+			}
 
-			if (!DUPLICATE_CHECK_O(neighbor.s))	LIST.push_back(neighbor);
+			if (!DUPLICATE_CHECK_O(neighbor.s))
+			{
+				print(neighbor.s); std::cout << "HAS BEEN EXPANDED\n";
+				LIST.push_back(neighbor);
+			}
 
 			int temp = curr.g + 1;
 
 			if (temp >= neighbor.g) continue;
+
+			std::cout << temp << " " << neighbor.g << "\n";
 
 			h.updateHCost(neighbor.s);
 			UPDATE_NODE(neighbor, o, temp, temp + h.HCOST);
 		}
 	}
 
+	std::cout << "Path not found\n";
 	return std::vector<STPSlideDir>();
 }
 
@@ -62,8 +82,7 @@ std::vector<STPSlideDir> InefficientAStar::RECONSTRUCT_PATH(STP &puzzle, A_STAR_
 
 	while (curr.parent != kNone)
 	{
-		puzzle.ApplyOperator(curr.s, curr.parent);
-		path.push_back(curr.parent);
+
 	}
 
 	return path;
@@ -105,17 +124,18 @@ A_STAR_NODE& InefficientAStar::GET_BEST()
 	{
 		if (i->OPEN)
 		{
-			//print(i.s);
 			if (i->f < lowest)
 			{
+				std::cout << "LOWEST UPDATED\n:" << lowest << ": -> :" << i->f << ":\n";
 				i->close();
 				lowest = i->f;
 				cursor = *i;
 			}
+			else std::cout << "LOWEST NOT UPDATED\n:" << i->f << ":\n";
 		}
 	}
 
-	print(cursor.s);
+	//print(cursor.s);
 	return cursor;
 }
 
@@ -150,13 +170,18 @@ void print(STPState &s)
 
 void InefficientAStar::UPDATE_NODE(A_STAR_NODE &n, STPSlideDir parent, int g, int f) // n must be in LIST for this to be called
 {
-	for (auto i : LIST)
+
+	for (std::vector<A_STAR_NODE>::iterator i = LIST.begin(); i != LIST.end(); ++i)
 	{
-		if (i.s == n.s)
+		if (i->s == n.s)
 		{
-			i.parent = parent;
-			i.g = g;
-			i.f = f;
+			std::cout << "parent = " << i->parent << " g = " << i->g << " f = " << i->f << "\n";
+
+			i->parent = parent;
+			i->g = g;
+			i->f = f;
+
+			std::cout << "parent -> " << i->parent << " g -> " << i->g << " f -> " << i->f << "\n";
 
 			return;
 		}

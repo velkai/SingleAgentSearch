@@ -30,13 +30,11 @@ struct A_STAR_NODE
 		OPEN = true;
 	}
 
-	void set(A_STAR_NODE &source)
+	void set(A_STAR_NODE &source, STP &puzzle, STPSlideDir o)
 	{
 		this->s = source.s;
-		this->f = source.f;
-		this->g = source.g;
-		this->parent = parent;
-		this->OPEN = source.OPEN;
+		puzzle.ApplyOperator(this->s, o);
+		this->parent = o;
 	}
 
 	void open()
