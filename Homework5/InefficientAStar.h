@@ -21,7 +21,7 @@ struct A_STAR_NODE
 		OPEN = true;
 	}
 	
-	A_STAR_NODE(STPState &s, int f, int g, STPSlideDir parent)
+	A_STAR_NODE(STPState &s, int f, int g, STPSlideDir parent) // this is only ever used to initialize the root
 	{
 		this->s = s;
 		this->f = f;
@@ -32,7 +32,16 @@ struct A_STAR_NODE
 
 	void set(A_STAR_NODE &source, STP &puzzle, STPSlideDir o)
 	{
-		this->s = source.s;
+		for (int w = 0; w < 3; ++w)
+		{
+			for (int h = 0; h < 5; ++h)
+			{
+				this->s.tiles[w][h] = source.s.tiles[w][h];
+			}
+		}
+		this->s.blankx = source.s.blankx;
+		this->s.blanky = source.s.blanky;
+
 		puzzle.ApplyOperator(this->s, o);
 		this->parent = o;
 	}
@@ -66,7 +75,8 @@ private:
 	bool OPEN_EMPTY();
 	A_STAR_NODE& GET_BEST();
 	void UPDATE_NODE(A_STAR_NODE &n, STPSlideDir parent, int g, int f);
+	STPSlideDir GET_PARENT(STPState &s);
 
-	std::vector<STPSlideDir> RECONSTRUCT_PATH(STP &puzzle, A_STAR_NODE &curr);
+	std::vector<STPSlideDir> RECONSTRUCT_PATH(STP &puzzle, A_STAR_NODE curr);
 
 };

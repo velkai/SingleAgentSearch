@@ -10,6 +10,8 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 {
 	LIST.clear();
 
+	print(start);
+
 	// struct A_STAR_NODE contains information about predecessors, g cost, and f cost
 	// initialize an STP environment and a cursor pointing to the current node (a curr-sor?)
 	// the first node is OPEN, its g cost is 0, and so its f cost is just the h cost
@@ -27,13 +29,8 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 
 		if (curr.s == goal)
 		{
-			std::cout << "Path found\n\n\n";
-			for (auto i : LIST)
-			{
-				print(i.s);
-				std::cout << i.parent << "\n";
-			}
-			std::cout << "\n";
+			print(goal);
+			std::cout << "Path found\n";
 			return RECONSTRUCT_PATH(puzzle, curr);
 		}
 
@@ -46,17 +43,16 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 			A_STAR_NODE neighbor;
 			neighbor.set(curr, puzzle, o);
 			neighbor.open();
-			//print(neighbor.s);
 
 			if (DUPLICATE_CHECK_C(neighbor.s))
 			{
-				print(neighbor.s); std::cout << "IS CLOSED\n";
+				//print(neighbor.s); std::cout << "IS CLOSED\n";
 				continue;
 			}
 
 			if (!DUPLICATE_CHECK_O(neighbor.s))
 			{
-				print(neighbor.s); std::cout << "HAS BEEN EXPANDED\n";
+				//print(neighbor.s); std::cout << "HAS BEEN EXPANDED\n";
 				LIST.push_back(neighbor);
 			}
 
@@ -64,7 +60,7 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 
 			if (temp >= neighbor.g) continue;
 
-			std::cout << temp << " " << neighbor.g << "\n";
+			//std::cout << temp << " " << neighbor.g << "\n";
 
 			h.updateHCost(neighbor.s);
 			UPDATE_NODE(neighbor, o, temp, temp + h.HCOST);
@@ -75,14 +71,16 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 	return std::vector<STPSlideDir>();
 }
 
-std::vector<STPSlideDir> InefficientAStar::RECONSTRUCT_PATH(STP &puzzle, A_STAR_NODE &curr)
+std::vector<STPSlideDir> InefficientAStar::RECONSTRUCT_PATH(STP &puzzle, A_STAR_NODE curr)
 {
 	std::vector<STPSlideDir> path;
 	path.push_back(curr.parent);
 
 	while (curr.parent != kNone)
 	{
-
+		puzzle.UndoOperator(curr.s, curr.parent);
+		curr.parent = GET_PARENT(curr.s);
+		path.push_back(curr.parent);
 	}
 
 	return path;
@@ -126,12 +124,12 @@ A_STAR_NODE& InefficientAStar::GET_BEST()
 		{
 			if (i->f < lowest)
 			{
-				std::cout << "LOWEST UPDATED\n:" << lowest << ": -> :" << i->f << ":\n";
+				//std::cout << "LOWEST UPDATED\n:" << lowest << ": -> :" << i->f << ":\n";
 				i->close();
 				lowest = i->f;
 				cursor = *i;
 			}
-			else std::cout << "LOWEST NOT UPDATED\n:" << i->f << ":\n";
+			//else std::cout << "LOWEST NOT UPDATED\n:" << i->f << ":\n";
 		}
 	}
 
@@ -175,17 +173,32 @@ void InefficientAStar::UPDATE_NODE(A_STAR_NODE &n, STPSlideDir parent, int g, in
 	{
 		if (i->s == n.s)
 		{
-			std::cout << "parent = " << i->parent << " g = " << i->g << " f = " << i->f << "\n";
+			//std::cout << "parent = " << i->parent << " g = " << i->g << " f = " << i->f << "\n";
 
 			i->parent = parent;
 			i->g = g;
 			i->f = f;
 
-			std::cout << "parent -> " << i->parent << " g -> " << i->g << " f -> " << i->f << "\n";
+			//std::cout << "parent -> " << i->parent << " g -> " << i->g << " f -> " << i->f << "\n";
 
 			return;
 		}
 	}
 
 	std::cout << "ERROR 2\n";
+}
+
+STPSlideDir InefficientAStar::GET_PARENT(STPState &s) // n must be in LIST for this to be called
+{
+
+	for (std::vector<A_STAR_NODE>::iterator i = LIST.begin(); i != LIST.end(); ++i)
+	{
+		if (i->s == s)
+		{
+			return i->parent;
+		}
+	}
+
+	std::cout << "ERROR 4\n";
+	return kNone;
 }
