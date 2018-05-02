@@ -1,183 +1,166 @@
 #include "InefficientAStar.h"
 
-InefficientAStar::InefficientAStar(heuristic &h)
+void print(STPState &s);
+
+InefficientAStar::InefficientAStar()
 {
-	this->h = h;
 }
 
-std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal)
+std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal, heuristic &h)
 {
-	// can't be too safe
-	CLOSED.clear();
-	OPEN.clear();
+	LIST.clear();
 
-	// initialize g and f cost containers, as well as a container for a node's parent operators
-	// also initialize an STP environment and a cursor pointing to the current node(curr-sor?)
-	std::unordered_map<STPState, STPSlideDir> cameFrom; // v1 = state, v2 = (most efficient parent)
-	std::unordered_map<STPState, int> g;
-	std::unordered_map<STPState, int> f;
+	// struct A_STAR_NODE contains information about predecessors, g cost, and f cost
+	// initialize an STP environment and a cursor pointing to the current node (a curr-sor?)
+	// the first node is OPEN, its g cost is 0, and so its f cost is just the h cost
 	STP puzzle;
-	COST_PAIR curr;
-
-	// put the first node on the OPEN list
-	OPEN.push_back(start);
-
-	// assign the first node a g cost of 0
-	g.insert(COST_PAIR(start, 0));
-
-	// for the first node, the f cost is simply the heuristic value, because the g cost is 0
 	h.updateHCost(start);
-	f.insert(COST_PAIR(start, h.HCOST));
+	A_STAR_NODE root(start, h.HCOST, 0, kNone);
+	LIST.push_back(root);
 
-	// make sure we know it's the root node by assigning its parent operator to kNone
-	cameFrom.insert(NODE_PAIR(start, kNone));
+	if (!root.OPEN) std::cout << "Whoa there.\n";
 
 	// while we still have nodes on the OPEN list (or until we find a solution)
-	while (!OPEN.empty())
+	while (!OPEN_EMPTY())
 	{
-		// set our currsor to the node with the lowest f cost
-		// at the start, this will have to be the root node
-		curr = GET_BEST(f);
+		A_STAR_NODE curr = GET_BEST();
 
-		// if we've just found the solution, return the path
-		if (curr.first == goal) return RECONSTRUCT_PATH(puzzle, cameFrom, curr.first);
-		
-		// move the currsor from OPEN to CLOSED
-		REMOVE(OPEN, curr.first);
-		CLOSED.push_back(curr.first);
+		if (curr.s == goal) return RECONSTRUCT_PATH(puzzle, curr);
 
-		// get and examine the currsor's successors
 		std::vector<STPSlideDir> operators;
-		if (!operators.empty()) std::cout << "SCOPE ERROR WITH THE OPERATORS LIST\n";
-		puzzle.GetOperators(curr.first, operators);
+		if (!operators.empty()) std::cout << "ERROR 1\n";
+		puzzle.GetOperators(curr.s, operators);
+
 		for (auto o : operators)
 		{
-			// initialize some temp variables
-			int CURR_GCOST = (*g.find(curr.first)).second;
-			STPState CURR = curr.first;
+			A_STAR_NODE neighbor;
+			neighbor.set(curr);
+			puzzle.ApplyOperator(neighbor.s, o);
+			neighbor.open();
+			print(neighbor.s);
 
-			// use the currsor to examine successors
-			// we will ALWAYS undo the operator before the end of an iteration
-			puzzle.ApplyOperator(curr.first, o);
+			if (DUPLICATE_CHECK_C(neighbor.s))	continue;
 
-			// if this successor is on the CLOSED list then we ignore it
-			if (DUPLICATE_CHECK_C(curr.first))
-			{
-				// reset the currsor
-				puzzle.UndoOperator(curr.first, o);
-				continue;
-			}
-			// add this successor to the OPEN list if we haven't already, and give it an entry in our f and g cost lists
-			if (!DUPLICATE_CHECK_O(curr.first))
-			{
-				f.insert(COST_PAIR(curr.first, INT_MAX));
-				g.insert(COST_PAIR(curr.first, INT_MAX));
-				OPEN.push_back(STPState(curr.first));
-			}
+			if (!DUPLICATE_CHECK_O(neighbor.s))	LIST.push_back(neighbor);
 
-			// get this successor's potential g cost
-			int temp = CURR_GCOST + 1;
+			int temp = curr.g + 1;
 
-			// if this is path costs more than the already explored path then we move on
-			if (temp >= (*g.find(curr.first)).second)
-			{
-				// reset the currsor
-				puzzle.UndoOperator(curr.first, o);
-				continue;
-			}
+			if (temp >= neighbor.g) continue;
 
-			// connect this successor to a path; assign its parent operator and assign its f and g costs
-			if (CURR == curr.first) std::cout << "NON-SHALLOW COPY DETECTED - Will cause errors in pathfinding and cost data\n";
-			(*cameFrom.find(curr.first)).second = o;
-			(*g.find(curr.first)).second = temp;
-			h.updateHCost(curr.first);
-			(*f.find(curr.first)).second = temp + h.HCOST;
-
-			// reset the currsor
-			puzzle.UndoOperator(curr.first, o);
+			h.updateHCost(neighbor.s);
+			UPDATE_NODE(neighbor, o, temp, temp + h.HCOST);
 		}
 	}
 
-	// hopefully we never see this
-	std::cout << "PATH NOT FOUND\n";
 	return std::vector<STPSlideDir>();
 }
 
-std::vector<STPSlideDir> InefficientAStar::RECONSTRUCT_PATH(STP &puzzle, std::unordered_map<STPState, STPSlideDir> &cameFrom, STPState &curr)
+std::vector<STPSlideDir> InefficientAStar::RECONSTRUCT_PATH(STP &puzzle, A_STAR_NODE &curr)
 {
 	std::vector<STPSlideDir> path;
-	path.push_back((*cameFrom.find(curr)).second);
+	path.push_back(curr.parent);
 
-	while ((*cameFrom.find(curr)).second != kNone)
+	while (curr.parent != kNone)
 	{
-		puzzle.ApplyOperator(curr, (*cameFrom.find(curr)).second);
-		path.push_back((*cameFrom.find(curr)).second);
+		puzzle.ApplyOperator(curr.s, curr.parent);
+		path.push_back(curr.parent);
 	}
 
 	return path;
 }
 
+// checks to see if a node is on the closed list
 bool InefficientAStar::DUPLICATE_CHECK_C(STPState &s)
 {
-	for (auto i : CLOSED)
+	for (auto i : LIST)
 	{
-		if (i == s) return true;
+		if (i.s == s)
+		{
+			if(i.OPEN == false) return true;
+			else return false;
+		}
 	}
 	return false;
 }
 
 bool InefficientAStar::DUPLICATE_CHECK_O(STPState &s)
 {
-	for (auto i : OPEN)
+	for (auto i : LIST)
 	{
-		if (i == s) return true;
+		if (i.s == s)
+		{
+			if(i.OPEN == true) return true;
+			else return false;
+		}
 	}
 	return false;
 }
 
-void InefficientAStar::UPDATE_G_COST(std::unordered_map<STPState, int> &f, std::unordered_map<STPState, int> &g, STPState &s, int gCost)
+A_STAR_NODE& InefficientAStar::GET_BEST()
 {
-	for (auto i : g)
+	int lowest = INT_MAX;
+	A_STAR_NODE cursor;
+
+	for (std::vector<A_STAR_NODE>::iterator i = LIST.begin(); i != LIST.end(); ++i)
 	{
-		if (i.first == s)
+		if (i->OPEN)
 		{
-			for (auto j : f)
+			//print(i.s);
+			if (i->f < lowest)
 			{
-				if (j.first == s)
-				{
-					// reevaluate the node's fCost
-					j.second -= i.second;
-					// reevaluate the node's gCost
-					i.second = gCost;
-					j.second += gCost;
-					return;
-				}
+				i->close();
+				lowest = i->f;
+				cursor = *i;
 			}
 		}
 	}
+
+	print(cursor.s);
+	return cursor;
 }
 
-COST_PAIR InefficientAStar::GET_BEST(std::unordered_map<STPState, int> &f)
+bool InefficientAStar::OPEN_EMPTY()
 {
-	int lowest = -1;
-	STPState key_val;
-
-	for (auto i : f)
+	for (auto i : LIST)
 	{
-		if (i.second < lowest)
+		if (i.OPEN) return false;
+	}
+	return true;
+}
+
+void print(STPState &s)
+{
+	std::cout << " ___________ \n|           |\n";
+	for (int h = 0; h < 5; ++h)
+	{
+		std::cout << "| ";
+		for (int w = 0; w < 3; ++w)
 		{
-			lowest = i.second;
-			key_val = i.first;
+			std::cout << " ";
+			if (s.tiles[w][h] > 9)
+			{
+				std::cout << s.tiles[w][h];
+			}
+			else std::cout << s.tiles[w][h] << " ";
+		}
+		std::cout << " |\n";
+	}
+	std::cout << "|___________|\n";
+}
+
+void InefficientAStar::UPDATE_NODE(A_STAR_NODE &n, STPSlideDir parent, int g, int f) // n must be in LIST for this to be called
+{
+	for (auto i : LIST)
+	{
+		if (i.s == n.s)
+		{
+			i.parent = parent;
+			i.g = g;
+			i.f = f;
+
+			return;
 		}
 	}
 
-	return *f.find(key_val);
-}
-
-void InefficientAStar::REMOVE(std::vector<STPState> &list, STPState &s)
-{
-	for (std::vector<STPState>::iterator i = list.begin(); i != list.end(); ++i)
-	{
-		if (*i == s) list.erase(i);
-	}
+	std::cout << "ERROR 2\n";
 }

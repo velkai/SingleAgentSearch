@@ -29,9 +29,9 @@ public:
 
 	ManhattanDistance();
 
-	void updateFCost(STPState &s, std::deque<STPState> &path);
-	void updateGCost(std::deque<STPState> &path);
-	void updateHCost(STPState &s);
+	void updateFCost(STPState &s, std::deque<STPState> &path) override;
+	void updateGCost(std::deque<STPState> &path) override;
+	void updateHCost(STPState &s) override;
 
 private:
 
