@@ -63,7 +63,7 @@ public:
 
 	InefficientAStar();
 
-	std::vector<STPSlideDir> GetPath(STPState &start, STPState &goal, heuristic &h);
+	std::vector<STPSlideDir> GetPath(STPState &start, STPState &goal, Heuristic &h);
 
 
 private:

@@ -6,7 +6,7 @@ InefficientAStar::InefficientAStar()
 {
 }
 
-std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal, heuristic &h)
+std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal, Heuristic &h)
 {
 	LIST.clear();
 
@@ -16,8 +16,7 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 	// initialize an STP environment and a cursor pointing to the current node (a curr-sor?)
 	// the first node is OPEN, its g cost is 0, and so its f cost is just the h cost
 	STP puzzle;
-	h.updateHCost(start);
-	A_STAR_NODE root(start, h.HCOST, 0, kNone);
+	A_STAR_NODE root(start, h.h(start), 0, kNone);
 	LIST.push_back(root);
 
 	if (!root.OPEN) std::cout << "Whoa there.\n";
@@ -62,8 +61,7 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 
 			//std::cout << temp << " " << neighbor.g << "\n";
 
-			h.updateHCost(neighbor.s);
-			UPDATE_NODE(neighbor, o, temp, temp + h.HCOST);
+			UPDATE_NODE(neighbor, o, temp, temp + h.h(neighbor.s));
 		}
 	}
 
