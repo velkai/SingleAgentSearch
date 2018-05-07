@@ -172,6 +172,10 @@ uint64_t *Ranking::GetPDBRank(STPState &s)
 	delete[] DUALA, DUALB, PDBA, PDBB;
 
 	return ret;
+    
+    // TESTING
+    std::cout << ret << std::endl;
+    
 }
 
 

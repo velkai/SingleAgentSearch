@@ -1,6 +1,7 @@
 #include <deque>
 #include "BFS.h"
 
+/*
 // start is passed by value so we don't modify the state in the calling function
 void BFS::GetPath(STP &stp, STPState start, STPState &goal)
 {
@@ -52,3 +53,4 @@ uint64_t BFS::GetNodesExpanded()
 //	STPSlideDir forbidden;
 //};
 
+ */

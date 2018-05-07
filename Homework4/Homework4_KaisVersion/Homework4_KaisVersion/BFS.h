@@ -8,7 +8,7 @@
 
 class BFS {
 public:
-	uint8_t GetPath(STP &stp, STPState start, STPState &goal);
+	uint64_t GetPath(STP &stp, STPState start, STPState &goal);
 	uint64_t GetNodesExpanded();
 private:
 	struct BFSNode {

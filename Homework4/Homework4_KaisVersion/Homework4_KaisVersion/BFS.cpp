@@ -3,7 +3,7 @@
 
 // start is passed by value so we don't modify the state in the calling function
 // modified to return the depth of the path
-uint8_t BFS::GetPath(STP &stp, STPState start, STPState &goal)
+uint64_t BFS::GetPath(STP &stp, STPState start, STPState &goal)
 {
 	if (start == goal) return 0;
 

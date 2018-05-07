@@ -6,6 +6,18 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		912336A4208ECAEF00FAC63E /* BFS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9123369B208ECAED00FAC63E /* BFS.cpp */; };
+		912336A5208ECAEF00FAC63E /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9123369C208ECAEE00FAC63E /* Ranking.cpp */; };
+		912336A6208ECAEF00FAC63E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9123369D208ECAEE00FAC63E /* main.cpp */; };
+		912336A7208ECAEF00FAC63E /* DFID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9123369E208ECAEE00FAC63E /* DFID.cpp */; };
+		912336A8208ECAEF00FAC63E /* IDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9123369F208ECAEE00FAC63E /* IDA.cpp */; };
+		912336A9208ECAEF00FAC63E /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912336A0208ECAEE00FAC63E /* Timer.cpp */; };
+		912336AA208ECAEF00FAC63E /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912336A1208ECAEF00FAC63E /* Source.cpp */; };
+		912336AB208ECAEF00FAC63E /* STP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912336A2208ECAEF00FAC63E /* STP.cpp */; };
+		912336AC208ECAEF00FAC63E /* heuristic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 912336A3208ECAEF00FAC63E /* heuristic.cpp */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		91233688208ECAA700FAC63E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +32,22 @@
 
 /* Begin PBXFileReference section */
 		9123368A208ECAA800FAC63E /* PDB */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PDB; sourceTree = BUILT_PRODUCTS_DIR; };
+		91233694208ECAD400FAC63E /* Ranking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Ranking.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/Ranking.h; sourceTree = "<group>"; };
+		91233695208ECAD600FAC63E /* IDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IDA.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/IDA.h; sourceTree = "<group>"; };
+		91233696208ECAD600FAC63E /* DFID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DFID.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/DFID.h; sourceTree = "<group>"; };
+		91233697208ECAD600FAC63E /* heuristic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = heuristic.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/heuristic.h; sourceTree = "<group>"; };
+		91233698208ECAD600FAC63E /* BFS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BFS.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/BFS.h; sourceTree = "<group>"; };
+		91233699208ECAD600FAC63E /* STP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = STP.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/STP.h; sourceTree = "<group>"; };
+		9123369A208ECAE200FAC63E /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Timer.h; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/Timer.h; sourceTree = "<group>"; };
+		9123369B208ECAED00FAC63E /* BFS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BFS.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/BFS.cpp; sourceTree = "<group>"; };
+		9123369C208ECAEE00FAC63E /* Ranking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ranking.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/Ranking.cpp; sourceTree = "<group>"; };
+		9123369D208ECAEE00FAC63E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/main.cpp; sourceTree = "<group>"; };
+		9123369E208ECAEE00FAC63E /* DFID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DFID.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/DFID.cpp; sourceTree = "<group>"; };
+		9123369F208ECAEE00FAC63E /* IDA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IDA.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/IDA.cpp; sourceTree = "<group>"; };
+		912336A0208ECAEE00FAC63E /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Timer.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/Timer.cpp; sourceTree = "<group>"; };
+		912336A1208ECAEF00FAC63E /* Source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Source.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/Source.cpp; sourceTree = "<group>"; };
+		912336A2208ECAEF00FAC63E /* STP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = STP.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/STP.cpp; sourceTree = "<group>"; };
+		912336A3208ECAEF00FAC63E /* heuristic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = heuristic.cpp; path = ../../Homework4_KaisVersion/Homework4_KaisVersion/heuristic.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +80,22 @@
 		9123368C208ECAA800FAC63E /* PDB */ = {
 			isa = PBXGroup;
 			children = (
+				91233698208ECAD600FAC63E /* BFS.h */,
+				91233696208ECAD600FAC63E /* DFID.h */,
+				91233697208ECAD600FAC63E /* heuristic.h */,
+				9123369A208ECAE200FAC63E /* Timer.h */,
+				91233695208ECAD600FAC63E /* IDA.h */,
+				91233694208ECAD400FAC63E /* Ranking.h */,
+				9123369B208ECAED00FAC63E /* BFS.cpp */,
+				9123369E208ECAEE00FAC63E /* DFID.cpp */,
+				912336A3208ECAEF00FAC63E /* heuristic.cpp */,
+				9123369F208ECAEE00FAC63E /* IDA.cpp */,
+				9123369D208ECAEE00FAC63E /* main.cpp */,
+				9123369C208ECAEE00FAC63E /* Ranking.cpp */,
+				912336A1208ECAEF00FAC63E /* Source.cpp */,
+				912336A2208ECAEF00FAC63E /* STP.cpp */,
+				912336A0208ECAEE00FAC63E /* Timer.cpp */,
+				91233699208ECAD600FAC63E /* STP.h */,
 			);
 			path = PDB;
 			sourceTree = "<group>";
@@ -113,6 +157,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912336A7208ECAEF00FAC63E /* DFID.cpp in Sources */,
+				912336A5208ECAEF00FAC63E /* Ranking.cpp in Sources */,
+				912336A8208ECAEF00FAC63E /* IDA.cpp in Sources */,
+				912336A9208ECAEF00FAC63E /* Timer.cpp in Sources */,
+				912336A4208ECAEF00FAC63E /* BFS.cpp in Sources */,
+				912336AC208ECAEF00FAC63E /* heuristic.cpp in Sources */,
+				912336A6208ECAEF00FAC63E /* main.cpp in Sources */,
+				912336AA208ECAEF00FAC63E /* Source.cpp in Sources */,
+				912336AB208ECAEF00FAC63E /* STP.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
