@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		916707F4209267A7003D962D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916707F3209267A7003D962D /* main.cpp */; };
-		916707FC2092680C003D962D /* AStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916707FA2092680C003D962D /* AStar.cpp */; };
-		916707FE20926D20003D962D /* STP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 916707FD20926D1F003D962D /* STP.cpp */; };
-		9167080220926D37003D962D /* IDA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9167080120926D36003D962D /* IDA.cpp */; };
-		9167080520926D4C003D962D /* A.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9167080320926D4C003D962D /* A.cpp */; };
+		91928522209B945500047895 /* heuristic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9192850F209B945400047895 /* heuristic.cpp */; };
+		91928523209B945500047895 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928510209B945400047895 /* main.cpp */; };
+		91928524209B945500047895 /* BFS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928511209B945400047895 /* BFS.cpp */; };
+		91928525209B945500047895 /* Ranking.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928512209B945400047895 /* Ranking.cpp */; };
+		91928526209B945500047895 /* STP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928519209B945400047895 /* STP.cpp */; };
+		91928527209B945500047895 /* MaxHeuristic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9192851B209B945500047895 /* MaxHeuristic.cpp */; };
+		91928528209B945500047895 /* DFID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9192851D209B945500047895 /* DFID.cpp */; };
+		91928529209B945500047895 /* InefficientAStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9192851F209B945500047895 /* InefficientAStar.cpp */; };
+		9192852A209B945500047895 /* PDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928520209B945500047895 /* PDB.cpp */; };
+		9192852B209B945500047895 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 91928521209B945500047895 /* Timer.cpp */; };
+		9192852E209B96E400047895 /* EfficientAStar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9192852C209B96E400047895 /* EfficientAStar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,15 +34,27 @@
 
 /* Begin PBXFileReference section */
 		916707F0209267A7003D962D /* Homework5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Homework5; sourceTree = BUILT_PRODUCTS_DIR; };
-		916707F3209267A7003D962D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		916707FA2092680C003D962D /* AStar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AStar.cpp; sourceTree = "<group>"; };
-		916707FB2092680C003D962D /* AStar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AStar.hpp; sourceTree = "<group>"; };
-		916707FD20926D1F003D962D /* STP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STP.cpp; sourceTree = "<group>"; };
-		916707FF20926D28003D962D /* STP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = "<group>"; };
-		9167080020926D31003D962D /* IDA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDA.h; sourceTree = "<group>"; };
-		9167080120926D36003D962D /* IDA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IDA.cpp; sourceTree = "<group>"; };
-		9167080320926D4C003D962D /* A.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = A.cpp; sourceTree = "<group>"; };
-		9167080420926D4C003D962D /* A.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = A.hpp; sourceTree = "<group>"; };
+		9192850F209B945400047895 /* heuristic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = heuristic.cpp; sourceTree = SOURCE_ROOT; };
+		91928510209B945400047895 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		91928511209B945400047895 /* BFS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BFS.cpp; sourceTree = SOURCE_ROOT; };
+		91928512209B945400047895 /* Ranking.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ranking.cpp; sourceTree = SOURCE_ROOT; };
+		91928513209B945400047895 /* InefficientAStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InefficientAStar.h; sourceTree = SOURCE_ROOT; };
+		91928514209B945400047895 /* Ranking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranking.h; sourceTree = SOURCE_ROOT; };
+		91928515209B945400047895 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = SOURCE_ROOT; };
+		91928516209B945400047895 /* DFID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFID.h; sourceTree = SOURCE_ROOT; };
+		91928517209B945400047895 /* STP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STP.h; sourceTree = SOURCE_ROOT; };
+		91928518209B945400047895 /* PDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDB.h; sourceTree = SOURCE_ROOT; };
+		91928519209B945400047895 /* STP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = STP.cpp; sourceTree = SOURCE_ROOT; };
+		9192851A209B945400047895 /* heuristic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = heuristic.h; sourceTree = SOURCE_ROOT; };
+		9192851B209B945500047895 /* MaxHeuristic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MaxHeuristic.cpp; sourceTree = SOURCE_ROOT; };
+		9192851C209B945500047895 /* BFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFS.h; sourceTree = SOURCE_ROOT; };
+		9192851D209B945500047895 /* DFID.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DFID.cpp; sourceTree = SOURCE_ROOT; };
+		9192851E209B945500047895 /* MaxHeuristic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaxHeuristic.h; sourceTree = SOURCE_ROOT; };
+		9192851F209B945500047895 /* InefficientAStar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = InefficientAStar.cpp; sourceTree = SOURCE_ROOT; };
+		91928520209B945500047895 /* PDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PDB.cpp; sourceTree = SOURCE_ROOT; };
+		91928521209B945500047895 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = SOURCE_ROOT; };
+		9192852C209B96E400047895 /* EfficientAStar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = EfficientAStar.cpp; sourceTree = "<group>"; };
+		9192852D209B96E400047895 /* EfficientAStar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = EfficientAStar.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,15 +87,27 @@
 		916707F2209267A7003D962D /* Homework5 */ = {
 			isa = PBXGroup;
 			children = (
-				916707F3209267A7003D962D /* main.cpp */,
-				9167080020926D31003D962D /* IDA.h */,
-				9167080320926D4C003D962D /* A.cpp */,
-				9167080420926D4C003D962D /* A.hpp */,
-				916707FA2092680C003D962D /* AStar.cpp */,
-				916707FF20926D28003D962D /* STP.h */,
-				916707FD20926D1F003D962D /* STP.cpp */,
-				9167080120926D36003D962D /* IDA.cpp */,
-				916707FB2092680C003D962D /* AStar.hpp */,
+				91928511209B945400047895 /* BFS.cpp */,
+				9192851C209B945500047895 /* BFS.h */,
+				9192851D209B945500047895 /* DFID.cpp */,
+				91928516209B945400047895 /* DFID.h */,
+				9192850F209B945400047895 /* heuristic.cpp */,
+				9192851A209B945400047895 /* heuristic.h */,
+				9192851F209B945500047895 /* InefficientAStar.cpp */,
+				91928513209B945400047895 /* InefficientAStar.h */,
+				9192852C209B96E400047895 /* EfficientAStar.cpp */,
+				9192852D209B96E400047895 /* EfficientAStar.hpp */,
+				91928510209B945400047895 /* main.cpp */,
+				9192851B209B945500047895 /* MaxHeuristic.cpp */,
+				9192851E209B945500047895 /* MaxHeuristic.h */,
+				91928520209B945500047895 /* PDB.cpp */,
+				91928518209B945400047895 /* PDB.h */,
+				91928512209B945400047895 /* Ranking.cpp */,
+				91928514209B945400047895 /* Ranking.h */,
+				91928519209B945400047895 /* STP.cpp */,
+				91928517209B945400047895 /* STP.h */,
+				91928521209B945500047895 /* Timer.cpp */,
+				91928515209B945400047895 /* Timer.h */,
 			);
 			path = Homework5;
 			sourceTree = "<group>";
@@ -139,11 +169,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9167080520926D4C003D962D /* A.cpp in Sources */,
-				916707FE20926D20003D962D /* STP.cpp in Sources */,
-				916707F4209267A7003D962D /* main.cpp in Sources */,
-				9167080220926D37003D962D /* IDA.cpp in Sources */,
-				916707FC2092680C003D962D /* AStar.cpp in Sources */,
+				91928526209B945500047895 /* STP.cpp in Sources */,
+				91928528209B945500047895 /* DFID.cpp in Sources */,
+				91928527209B945500047895 /* MaxHeuristic.cpp in Sources */,
+				9192852B209B945500047895 /* Timer.cpp in Sources */,
+				91928524209B945500047895 /* BFS.cpp in Sources */,
+				91928529209B945500047895 /* InefficientAStar.cpp in Sources */,
+				91928523209B945500047895 /* main.cpp in Sources */,
+				9192852A209B945500047895 /* PDB.cpp in Sources */,
+				9192852E209B96E400047895 /* EfficientAStar.cpp in Sources */,
+				91928525209B945500047895 /* Ranking.cpp in Sources */,
+				91928522209B945500047895 /* heuristic.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

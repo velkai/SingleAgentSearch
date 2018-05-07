@@ -4,11 +4,13 @@
 #include "STP.h"
 #include "PDB.h"
 #include "MaxHeuristic.h"
+#include "AStar.hpp"
 
 int main() 
 {
 	ManhattanDistance h;
-	InefficientAStar a;
+	//InefficientAStar a;
+    AStar a;
 
 	STP puzzle;
 	STPState s;

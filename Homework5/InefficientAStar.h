@@ -63,15 +63,14 @@ class InefficientAStar
 {
 public:
 
-	AStar();
+	InefficientAStar();
 
 	std::vector<STPSlideDir> GetPath(STPState &start, STPState &goal, Heuristic &h);
 
 
 private:
 
-    // Using an int as a key
-	std::unordered_map<int, A_STAR_NODE> LIST;
+	std::vector<A_STAR_NODE> LIST;
 	
 	bool DUPLICATE_CHECK_O(STPState &s);
 	bool DUPLICATE_CHECK_C(STPState &s);
