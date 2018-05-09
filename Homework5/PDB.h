@@ -7,7 +7,7 @@
 #define PDB_h
 
 #include <stdio.h>
-#include "heuristic.h"
+#include "Heuristic.h"
 
 class PDB : public Heuristic {
 public:

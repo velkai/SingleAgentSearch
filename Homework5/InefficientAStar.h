@@ -13,10 +13,8 @@ struct A_STAR_NODE
 	STPSlideDir parent;
 	bool OPEN;
 
-    // Struct
 	A_STAR_NODE()
 	{
-        // Initialising to Max value
 		f = INT_MAX;
 		g = INT_MAX;
 		parent = kNone;
@@ -62,8 +60,6 @@ struct A_STAR_NODE
 class InefficientAStar
 {
 public:
-
-	InefficientAStar();
 
 	std::vector<STPSlideDir> GetPath(STPState &start, STPState &goal, Heuristic &h);
 

@@ -2,10 +2,6 @@
 
 void print(STPState &s);
 
-InefficientAStar::InefficientAStar()
-{
-}
-
 std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal, Heuristic &h)
 {
 	LIST.clear();
@@ -144,26 +140,6 @@ bool InefficientAStar::OPEN_EMPTY()
 	return true;
 }
 
-void print(STPState &s)
-{
-	std::cout << " ___________ \n|           |\n";
-	for (int h = 0; h < 5; ++h)
-	{
-		std::cout << "| ";
-		for (int w = 0; w < 3; ++w)
-		{
-			std::cout << " ";
-			if (s.tiles[w][h] > 9)
-			{
-				std::cout << s.tiles[w][h];
-			}
-			else std::cout << s.tiles[w][h] << " ";
-		}
-		std::cout << " |\n";
-	}
-	std::cout << "|___________|\n";
-}
-
 void InefficientAStar::UPDATE_NODE(A_STAR_NODE &n, STPSlideDir parent, int g, int f) // n must be in LIST for this to be called
 {
 
@@ -199,4 +175,17 @@ STPSlideDir InefficientAStar::GET_PARENT(STPState &s) // n must be in LIST for t
 
 	std::cout << "ERROR 4\n";
 	return kNone;
+}
+
+void print(STPState &s)
+{
+	for (int w = 0; w < 3; ++w)
+	{
+		for (int h = 0; h < 5; ++h)
+		{
+			std::cout << s.tiles[w][h] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
 }
