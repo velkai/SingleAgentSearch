@@ -22,3 +22,13 @@ int ManhattanDistance::h(const STPState &s)
 	}
 	return h;
 }
+
+int ManhattanDistance::h(const GMState &s1)
+{
+	return abs(s1.x - goal.x) + abs(s1.y - goal.y);
+}
+
+void ManhattanDistance::SetGoal(const GMState &s)
+{
+	goal = s;
+}

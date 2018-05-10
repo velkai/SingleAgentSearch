@@ -1,12 +1,8 @@
 #include "InefficientAStar.h"
 
-void print(STPState &s);
-
 std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &goal, Heuristic &h)
 {
 	LIST.clear();
-
-	print(start);
 
 	// struct A_STAR_NODE contains information about predecessors, g cost, and f cost
 	// initialize an STP environment and a cursor pointing to the current node (a curr-sor?)
@@ -24,7 +20,6 @@ std::vector<STPSlideDir> InefficientAStar::GetPath(STPState &start, STPState &go
 
 		if (curr.s == goal)
 		{
-			print(goal);
 			std::cout << "Path found\n";
 			return RECONSTRUCT_PATH(puzzle, curr);
 		}
@@ -175,17 +170,4 @@ STPSlideDir InefficientAStar::GET_PARENT(STPState &s) // n must be in LIST for t
 
 	std::cout << "ERROR 4\n";
 	return kNone;
-}
-
-void print(STPState &s)
-{
-	for (int w = 0; w < 3; ++w)
-	{
-		for (int h = 0; h < 5; ++h)
-		{
-			std::cout << s.tiles[w][h] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
 }

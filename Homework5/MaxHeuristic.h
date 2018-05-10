@@ -14,6 +14,10 @@ class MaxHeuristic : public Heuristic {
 public:
 	void AddHeuristic(Heuristic *);
 	int h(const STPState &s);
+	int h(const GMState &s)
+	{
+		return 0;
+	}
 private:
 	std::vector<Heuristic *> heuristics;
 };

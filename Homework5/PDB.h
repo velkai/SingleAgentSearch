@@ -13,6 +13,7 @@ class PDB : public Heuristic {
 public:
 	PDB(const std::vector<int> &tiles);
 	int h(const STPState &s);
+	int h(const GMState &s);
 	void PrintDistribution();
 private:
 	struct BFSNode {

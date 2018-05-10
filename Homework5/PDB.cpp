@@ -20,6 +20,10 @@ int PDB::h(const STPState &s)
 	return pdb[rank(s)];
 }
 
+int PDB::h(const GMState &s)
+{
+	return 0;
+}
 
 uint64_t PDB::rank(const STPState &s)
 {

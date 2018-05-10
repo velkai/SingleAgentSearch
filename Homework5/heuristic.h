@@ -10,11 +10,13 @@
 #define Heuristic_h
 
 #include "STP.h"
+#include "GridMap.h"
 
 class Heuristic {
 public:
 	virtual ~Heuristic() {}
 	virtual int h(const STPState &) = 0;
+	virtual int h(const GMState &) = 0;
 };
 
 #endif /* Heuristic_h */
