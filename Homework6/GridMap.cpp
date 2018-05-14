@@ -67,77 +67,70 @@ void GridMap::Import(const char *filename)
 
 void GridMap::GetSuccessors(GMState &s, std::vector<GMState> &states)
 {
-	if (s.x != 0)
+	std::vector<GMMoveDir> operators;
+	GetOperators(s, operators);
+	for (auto i : operators)
 	{
-		if (grid[s.y][s.x - 1])
-		{
-			ApplyOperator(s, gLeft);
-			states.push_back(s);
-			UndoOperator(s, gLeft);
-		}
-	}
-	if (s.x != grid.at(0).size() - 1)
-	{
-		if (grid[s.y][s.x + 1])
-		{
-			ApplyOperator(s, gRight);
-			states.push_back(s);
-			UndoOperator(s, gRight);
-		}
-	}
-	if (s.y != 0)
-	{
-		if (grid[s.y - 1][s.x])
-		{
-			ApplyOperator(s, gUp);
-			states.push_back(s);
-			UndoOperator(s, gUp);
-		}
-	}
-	if (s.y != grid.size())
-	{
-		if (grid[s.y + 1][s.x])
-		{
-			ApplyOperator(s,gDown);
-			states.push_back(s);
-			UndoOperator(s, gDown);
-		}
+		ApplyOperator(s, i);
+		states.push_back(s);
+		UndoOperator(s, i);
 	}
 }
 
 void GridMap::GetOperators(GMState &s, std::vector<GMMoveDir> &operators)
 {
-	if (s.x != 0)
+	bool L = s.x != 0;
+	bool R = s.x != grid.at(0).size() - 1;
+	bool U = s.y != 0;
+	bool D = s.y != grid.size()-1;
+
+	if (L)
 	{
-		operators.push_back(gLeft);
+		std::cout << "L\n";
+		if(grid[s.y][s.x - 1]) operators.push_back(gLeft);
 	}
-	if (s.x != grid.at(0).size() - 1)
+	if (R)
 	{
-		operators.push_back(gRight);
+		std::cout << "R\n";
+		if (grid[s.y][s.x + 1]) operators.push_back(gRight);
 	}
-	if (s.y != 0)
+	if (U)
 	{
-		operators.push_back(gUp);
+		std::cout << "U\n";
+		if (grid[s.y - 1][s.x]) operators.push_back(gUp);
 	}
-	if (s.y != grid.size())
+	if (D)
 	{
-		operators.push_back(gDown);
+		std::cout << "D\n";
+		if (grid[s.y + 1][s.x]) operators.push_back(gDown);
 	}
-	if (s.x != 0 && s.y != 0)
+	if (L && U)
 	{
-		operators.push_back(gUpLeft);
+		std::cout << "UL\n";
+		if (grid[s.y - 1][s.x - 1]
+			&& grid[s.y][s.x - 1]
+			&& grid[s.y - 1][s.x]) operators.push_back(gUpLeft);
 	}
-	if (s.x != 0 && s.y != grid.size())
+	if (L && D)
 	{
-		operators.push_back(gDownLeft);
+		std::cout << "DL\n";
+		if (grid[s.y + 1][s.x - 1] + 1
+			&& grid[s.y][s.x - 1]
+			&& grid[s.y + 1][s.x]) operators.push_back(gDownLeft);
 	}
-	if (s.x != grid.at(0).size() - 1 && s.y != 0)
+	if (R && U)
 	{
-		operators.push_back(gUpRight);
+		std::cout << "UR\n";
+		if (grid[s.y - 1][s.x + 1]
+			&& grid[s.y][s.x + 1]
+			&& grid[s.y - 1][s.x]) operators.push_back(gUpRight);
 	}
-	if (s.x != grid.at(0).size() - 1 && s.y != grid.size())
+	if (R && D)
 	{
-		operators.push_back(gDownRight);
+		std::cout << "DR\n";
+		if (grid[s.y + 1][s.x + 1]
+			&& grid[s.y][s.x + 1]
+			&& grid[s.y + 1][s.x]) operators.push_back(gDownRight);
 	}
 }
 
@@ -155,6 +148,14 @@ void GridMap::ApplyOperator(GMState &s, GMMoveDir o)
 		break;
 	case gNone:
 		break;
+	case gUpLeft: --s.y; --s.x;
+		break;
+	case gUpRight: --s.y; ++s.x;
+		break;
+	case gDownLeft: ++s.y; --s.x;
+		break;
+	case gDownRight: ++s.y; ++s.x;
+		break;
 	}
 }
 
@@ -171,6 +172,14 @@ void GridMap::UndoOperator(GMState &s, GMMoveDir o)
 	case gRight: ApplyOperator(s, gLeft);
 		break;
 	case gNone:
+		break;
+	case gUpLeft: ApplyOperator(s, gDownRight);
+		break;
+	case gUpRight: ApplyOperator(s, gDownLeft);
+		break;
+	case gDownLeft: ApplyOperator(s, gUpRight);
+		break;
+	case gDownRight: ApplyOperator(s, gUpLeft);
 		break;
 	}
 }
@@ -190,4 +199,54 @@ void GridMap::InvertOperator(GMMoveDir &o)
 	case gNone:
 		break;
 	}
+}
+
+void GridMap::PrintState(GMState &s)
+{
+	for (int i = 0; i < grid.size(); ++i)
+	{
+		for (int j = 0; j < grid[i].size(); ++j)
+		{
+			if (grid[i][j])
+			{
+				if (s.x == j && s.y == i) std::cout << "O";
+				else std::cout << " ";
+			}
+			else std::cout << "X";
+		}
+		std::cout << "\n";
+	}
+}
+
+void GridMap::PrintStates(std::vector<GMState> &s)
+{
+	for (int i = 0; i < grid.size(); ++i)
+	{
+		for (int j = 0; j < grid[i].size(); ++j)
+		{
+			if (grid[i][j])
+			{
+				bool found = false;
+				for (auto state : s)
+				{
+					if (state.x == j && state.y == i)
+					{
+						found = true;
+						break;
+					}
+				}
+				if (found) std::cout << "O";
+				else std::cout << " ";
+			}
+			else std::cout << "X";
+		}
+		std::cout << "\n";
+	}
+}
+
+double GridMap::GetCost(GMMoveDir o)
+{
+	if ((int)o == 4) return 0;
+	if ((int)o > 4) return DiagCost;
+	else return CardCost;
 }

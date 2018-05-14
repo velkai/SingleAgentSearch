@@ -20,9 +20,14 @@ int main()
 void TEST_GMMOVEDIR_ENUM()
 {
 	GridMap environment;
-	GMState s1(60, 0);
-	GMState s2(60, 1);
+	GMState s1(62, 0);
+	GMState s2(62, 3);
 	environment.Import("test.map");
+
+	environment.PrintState(s1);
+	std::cout << "\n\n\n";
+	environment.PrintState(s2);
+	std::cout << "\n\n\n";
 
 	std::vector<GMMoveDir> operators;
 	environment.GetOperators(s1, operators);
@@ -40,4 +45,8 @@ void TEST_GMMOVEDIR_ENUM()
 	{
 		std::cout << i << "\n";
 	}
+
+	std::vector<GMState> successors;
+	environment.GetSuccessors(s2, successors);
+	environment.PrintStates(successors);
 }

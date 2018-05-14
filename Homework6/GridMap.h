@@ -56,6 +56,9 @@ public:
 	void ApplyOperator(GMState &s, GMMoveDir o);
 	void UndoOperator(GMState &s, GMMoveDir o);
 	void InvertOperator(GMMoveDir &o);
+	void PrintState(GMState &s);
+	void PrintStates(std::vector<GMState> &s);
+	double GetCost(GMMoveDir o);
 
 private:
 	std::vector<std::vector<bool>> grid;
