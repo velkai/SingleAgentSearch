@@ -103,6 +103,8 @@ public:
 	void ApplyOperator(STPState &s, STPSlideDir o);
 	void UndoOperator(STPState &s, STPSlideDir o);
 	void InvertOperator(STPSlideDir &o);
+	double GetCost(STPSlideDir o) { return 1; }
+	void PrintStates(std::vector<STPState> &s) {};
 };
 
 void DoRandomWalkSuccessors(STP &puzzle, STPState &s, int length);

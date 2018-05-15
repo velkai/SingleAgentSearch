@@ -86,48 +86,40 @@ void GridMap::GetOperators(GMState &s, std::vector<GMMoveDir> &operators)
 
 	if (L)
 	{
-		std::cout << "L\n";
 		if(grid[s.y][s.x - 1]) operators.push_back(gLeft);
 	}
 	if (R)
 	{
-		std::cout << "R\n";
 		if (grid[s.y][s.x + 1]) operators.push_back(gRight);
 	}
 	if (U)
 	{
-		std::cout << "U\n";
 		if (grid[s.y - 1][s.x]) operators.push_back(gUp);
 	}
 	if (D)
 	{
-		std::cout << "D\n";
 		if (grid[s.y + 1][s.x]) operators.push_back(gDown);
 	}
 	if (L && U)
 	{
-		std::cout << "UL\n";
 		if (grid[s.y - 1][s.x - 1]
 			&& grid[s.y][s.x - 1]
 			&& grid[s.y - 1][s.x]) operators.push_back(gUpLeft);
 	}
 	if (L && D)
 	{
-		std::cout << "DL\n";
 		if (grid[s.y + 1][s.x - 1] + 1
 			&& grid[s.y][s.x - 1]
 			&& grid[s.y + 1][s.x]) operators.push_back(gDownLeft);
 	}
 	if (R && U)
 	{
-		std::cout << "UR\n";
 		if (grid[s.y - 1][s.x + 1]
 			&& grid[s.y][s.x + 1]
 			&& grid[s.y - 1][s.x]) operators.push_back(gUpRight);
 	}
 	if (R && D)
 	{
-		std::cout << "DR\n";
 		if (grid[s.y + 1][s.x + 1]
 			&& grid[s.y][s.x + 1]
 			&& grid[s.y + 1][s.x]) operators.push_back(gDownRight);
@@ -198,6 +190,14 @@ void GridMap::InvertOperator(GMMoveDir &o)
 		break;
 	case gNone:
 		break;
+	case gUpLeft: o = gDownRight;
+		break;
+	case gDownLeft: o = gUpRight;
+		break;
+	case gUpRight: o = gDownLeft;
+		break;
+	case gDownRight: o = gDownLeft;
+		break;
 	}
 }
 
@@ -212,7 +212,11 @@ void GridMap::PrintState(GMState &s)
 				if (s.x == j && s.y == i) std::cout << "O";
 				else std::cout << " ";
 			}
-			else std::cout << "X";
+			else
+			{
+				if (s.x == j && s.y == i) std::cout << "e";
+				else std::cout << "X";
+			}
 		}
 		std::cout << "\n";
 	}
@@ -235,10 +239,23 @@ void GridMap::PrintStates(std::vector<GMState> &s)
 						break;
 					}
 				}
-				if (found) std::cout << "O";
+				if (found) std::cout << ".";
 				else std::cout << " ";
 			}
-			else std::cout << "X";
+			else
+			{
+				bool found = false;
+				for (auto state : s)
+				{
+					if (state.x == j && state.y == i)
+					{
+						found = true;
+						break;
+					}
+				}
+				if (found) std::cout << ".";
+				else std::cout << "X";
+			}
 		}
 		std::cout << "\n";
 	}

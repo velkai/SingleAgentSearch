@@ -8,7 +8,7 @@
 
 template <typename T> struct NODE
 {
-	int f, g;
+	double f, g;
 	bool OPEN;
 	T parent;
 
@@ -16,7 +16,7 @@ template <typename T> struct NODE
 	{
 		f = g = INT_MAX;
 		OPEN = true;
-		parent = kNone;
+		parent = (T)4;
 	}
 
 	NODE(int f, int g, T parent)
@@ -44,7 +44,7 @@ template <typename T> struct NODE
 
 
 
-template <typename PUZZLE = STP, typename STATE = STPState, typename OPERATOR = STPSlideDir>
+template <typename PUZZLE, typename STATE, typename OPERATOR>
 class AStar
 {
 	typedef std::pair<STATE, NODE<OPERATOR>> STATE_NODE;
@@ -55,6 +55,8 @@ public:
 	{
 		LIST.clear();
 		PUZZLE puzzle;
+		std::vector<OPERATOR> ret;
+		bool GOAL_FOUND = false;
 
 		// struct NODE contains information about predecessors, g cost, and f cost
 		// initialize an PUZZLE environment and a cursor pointing to the current node (a curr-sor?)
@@ -65,7 +67,7 @@ public:
 			puzzle = g;
 		}
 		
-		NODE<OPERATOR> root(heuristic.h(start), 0, kNone);
+		NODE<OPERATOR> root(heuristic.h(start), 0, (OPERATOR)4);
 		LIST.insert(STATE_NODE(start, root));
 
 		if (!root.OPEN) std::cout << "Whoa there.\n";
@@ -75,11 +77,15 @@ public:
 		{
 			STATE curr = GET_BEST();
 
-			if (curr == goal)
+			//std::cout << curr << "\n";
+			std::cout << LIST.find(curr)->second.g << " ";
+
+			if (curr == goal && !GOAL_FOUND)
 			{
+				GOAL_FOUND = true;
 				std::cout << std::endl;
 				std::cout << "Path found\n";
-				return RECONSTRUCT_PATH(puzzle, curr);
+				ret = RECONSTRUCT_PATH(puzzle, curr);
 			}
 
 			std::vector<OPERATOR> operators;
@@ -97,7 +103,7 @@ public:
 				{
 					LIST.insert(STATE_NODE(neighbor, NODE<OPERATOR>()));
 				}
-				int temp = LIST.at(curr).g + 1;
+				int temp = LIST.at(curr).g + puzzle.GetCost(o);
 				if (temp >= LIST.at(neighbor).g) continue;
 				LIST.at(neighbor).parent = o;
 				LIST.at(neighbor).g = temp;
@@ -105,8 +111,15 @@ public:
 			}
 		}
 
-		std::cout << "Path not found\n";
-		return std::vector<OPERATOR>();
+		std::vector<STATE> list;
+		for (auto i : LIST)
+		{
+			list.push_back(i.first);
+		}
+
+		std::cout << "\n";
+		if(ret.empty()) std::cout << "Path not found\n";
+		return ret;
 	}
 
 	void SetMap(GridMap &g)
