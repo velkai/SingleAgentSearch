@@ -67,14 +67,20 @@ void TEST_ASTAR_GRID()
 	AStar<GridMap, GMState, GMMoveDir> a;
 	GridMap environment;
 	environment.Import("test.map");
-	GMState start(60, 0);
-	GMState goal(0, 120);
+	GMState start(100, 5);
+	GMState goal(91, 187);
 	a.SetMap(environment);
 	ManhattanDistance h;
 	h.SetGoal(goal);
+	//environment.PrintState(start);
+	//environment.PrintState(goal);
 
+	Timer t;
+	t.StartTimer();
 	std::vector<GMMoveDir> path = a.GetPath(start, goal, h);
-	GMState s(0, 120);
+	t.EndTimer();
+
+	GMState s(91, 187);
 	std::vector<GMState> p;
 	p.push_back(s);
 	for (auto i : path)
@@ -82,5 +88,6 @@ void TEST_ASTAR_GRID()
 		environment.UndoOperator(s, i);
 		p.push_back(s);
 	}
-	environment.PrintStates(p);
+	//environment.PrintStates(p);
+	std::cout << "Elapsed time: " << t.GetElapsedTime() << "s\n";
 }

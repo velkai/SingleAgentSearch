@@ -70,15 +70,13 @@ public:
 		NODE<OPERATOR> root(heuristic.h(start), 0, (OPERATOR)4);
 		LIST.insert(STATE_NODE(start, root));
 
-		if (!root.OPEN) std::cout << "Whoa there.\n";
-
 		// while we still have nodes on the OPEN list (or until we find a solution)
 		while (!OPEN_EMPTY())
 		{
 			STATE curr = GET_BEST();
 
-			//std::cout << curr << "\n";
-			std::cout << LIST.find(curr)->second.g << " ";
+			//std::cout << curr << ":";
+			//std::cout << LIST.find(curr)->second.g << "-" << LIST.find(curr)->second.f << "\n";
 
 			if (curr == goal && !GOAL_FOUND)
 			{
@@ -91,6 +89,7 @@ public:
 			std::vector<OPERATOR> operators;
 			if (!operators.empty()) std::cout << "ERROR 1\n";
 			puzzle.GetOperators(curr, operators);
+			if (operators.size() == 0) std::cout << "ERROR 2 " << curr << "\n";
 			for (auto o : operators)
 			{
 				STATE neighbor = curr;
@@ -103,6 +102,7 @@ public:
 				{
 					LIST.insert(STATE_NODE(neighbor, NODE<OPERATOR>()));
 				}
+				if (LIST.find(neighbor) == LIST.end()) std::cout << "ERROR 3 " << neighbor << "\n";
 				int temp = LIST.at(curr).g + puzzle.GetCost(o);
 				if (temp >= LIST.at(neighbor).g) continue;
 				LIST.at(neighbor).parent = o;
@@ -116,6 +116,7 @@ public:
 		{
 			list.push_back(i.first);
 		}
+		puzzle.PrintStates(list);
 
 		std::cout << "\n";
 		if(ret.empty()) std::cout << "Path not found\n";
