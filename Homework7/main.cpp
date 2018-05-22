@@ -95,6 +95,19 @@ void TestGrid(const char *map, const char *scene)
 int main(int argc, const char * argv[])
 {
 	//TestSTP();
-	TestGrid("lak303d.map", "lak303d.map.scen");
+	//TestGrid("lak303d.map", "lak303d.map.scen");
+	Grid grid("lak303d.map");
+	ScenarioLoader scenarios("lak303d.map.scen");
+	AStar<Grid, GridState, GridAction> astar;
+	OctileDistance octile;
+	for (int x = 0; x < scenarios.GetNumExperiments(); x++)
+	{
+		GridState from(scenarios.GetNthExperiment(x).GetStartX(), scenarios.GetNthExperiment(x).GetStartY());
+		GridState to(scenarios.GetNthExperiment(x).GetGoalX(), scenarios.GetNthExperiment(x).GetGoalY());
+		std::cout << "Searching from " << from << " to " << to << "\n";
+		float g = astar.GetGCost(&grid, from, to, &octile);
+		printf("G cost is %f; optimal cost is %f\n", g, scenarios.GetNthExperiment(x).GetDistance());
+	}
+
 	return 0;
 }

@@ -5,6 +5,7 @@
  * Created by Renee Jansen on 5/2/2006
  *
  */ 
+#define _CRT_SECURE_NO_WARNINGS
 
 #ifndef SCENARIOLOADER_H
 #define SCENARIOLOADER_H
