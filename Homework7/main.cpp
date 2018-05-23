@@ -14,6 +14,7 @@
 #include "Grid.h"
 #include "ScenarioLoader.h"
 #include "OctileDistance.h"
+#include "DifferentialHeuristic.h"
 
 STPState GenerateInstance(int walkDepth)
 {
@@ -99,14 +100,31 @@ int main(int argc, const char * argv[])
 	Grid grid("lak303d.map");
 	ScenarioLoader scenarios("lak303d.map.scen");
 	AStar<Grid, GridState, GridAction> astar;
+	std::vector<GridState> path;
+	DifferentialHeuristic r1("lak303d.map");
+	DifferentialHeuristic r2("lak303d.map");
+	DifferentialHeuristic r3("lak303d.map");
+	DifferentialHeuristic r4("lak303d.map");
+	DifferentialHeuristic r5("lak303d.map");
 	OctileDistance octile;
+	MaxHeuristic<GridState> h;
+	h.AddHeuristic(&octile);
+	h.AddHeuristic(&r1);
+	h.AddHeuristic(&r2);
+	h.AddHeuristic(&r3);
+	h.AddHeuristic(&r4);
+	h.AddHeuristic(&r5);
+
+	
 	for (int x = 0; x < scenarios.GetNumExperiments(); x++)
 	{
 		GridState from(scenarios.GetNthExperiment(x).GetStartX(), scenarios.GetNthExperiment(x).GetStartY());
 		GridState to(scenarios.GetNthExperiment(x).GetGoalX(), scenarios.GetNthExperiment(x).GetGoalY());
 		std::cout << "Searching from " << from << " to " << to << "\n";
-		float g = astar.GetGCost(&grid, from, to, &octile);
-		printf("G cost is %f; optimal cost is %f\n", g, scenarios.GetNthExperiment(x).GetDistance());
+		std::cout << "Octile distance: ";
+		astar.GetPath(&grid, from, to, &octile, path);
+		std::cout << "Octile distance w/ random pivots: ";
+		astar.GetPath(&grid, from, to, &h, path);
 	}
 
 	return 0;

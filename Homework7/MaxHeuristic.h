@@ -14,7 +14,7 @@ template <class state>
 class MaxHeuristic : public Heuristic<state> {
 public:
 	void AddHeuristic(Heuristic<state> *);
-	int h(const state &s1, const state &s2);
+	float h(const state &s1, const state &s2);
 private:
 	std::vector<Heuristic<state> *> heuristics;
 };
@@ -27,9 +27,9 @@ void MaxHeuristic<state>::AddHeuristic(Heuristic<state> *h)
 }
 
 template <class state>
-int MaxHeuristic<state>::h(const state &s1, const state &s2)
+float MaxHeuristic<state>::h(const state &s1, const state &s2)
 {
-	int hval = 0;
+	float hval = 0;
 	for (auto h : heuristics)
 	{
 		hval = std::max(hval, h->h(s1, s2));

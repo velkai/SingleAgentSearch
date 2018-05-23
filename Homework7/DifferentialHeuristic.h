@@ -14,9 +14,9 @@
 class DifferentialHeuristic : public Heuristic<GridState>
 {
 public:
-	DifferentialHeuristic(GridState &pivot);
-	int GetDistance(GridState &index);
-
+	DifferentialHeuristic(const char *filename, GridState &pivot);
+	DifferentialHeuristic(const char *filename);
+	float h(const GridState &, const GridState &);
 private:
 	GridState pivot;
 	std::unordered_map<GridState, float> dists;

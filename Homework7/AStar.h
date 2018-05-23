@@ -16,7 +16,7 @@ template <class environment, class state, class action>
 class AStar {
 public:
 	void GetPath(environment *env, state start, state goal, Heuristic<state> *h, std::vector<state> &path);
-	std::unordered_map<state, float> GetCosts(environment *env, state start, Heuristic<state> *h, std::vector<state> &path); // A* without a goal state; returns an hash table of state to g cost (float)
+	std::unordered_map<state, float> GetCosts(environment *env, state start, Heuristic<state> *h); // A* without a goal state; returns an hash table of state to g cost (float)
 private:
 	AStarOpenList<state> q;
 	std::vector<action> acts;
@@ -27,6 +27,7 @@ template <class environment, class state, class action>
 void AStar<environment, state, action>::GetPath(environment *env, state start, state goal,
 												Heuristic<state> *h, std::vector<state> &path)
 {
+	int exp = 1;
 	path.resize(0);
 	q.Reset();
 	q.Add(start, 0, h->h(start, goal));
@@ -37,6 +38,7 @@ void AStar<environment, state, action>::GetPath(environment *env, state start, s
 		if (next.state == goal)
 		{
 			q.GetPath(next.state, path);
+			std::cout << exp << " nodes expanded\n";
 			return;
 		}
 		env->GetOperators(next.state, acts);
@@ -46,16 +48,21 @@ void AStar<environment, state, action>::GetPath(environment *env, state start, s
 			state tmp = next.state;
 			env->ApplyOperator(tmp, op);
 			//std::cout << "**Sucessor " << tmp << "\n";
+			int size_i = q.Size();
 			q.Add(tmp, next.g+env->GetCost(op), h->h(tmp, goal), next.state);
+			int size_f = q.Size();
+			if (size_i < size_f) ++exp;
 		}
 	}
+	std::cout << exp << " nodes expanded\n";
 }
 
 template <class environment, class state, class action>
 std::unordered_map<state, float> AStar<environment, state, action>::GetCosts(environment *env, state start,
-	Heuristic<state> *h, std::vector<state> &path)
+	Heuristic<state> *h)
 {
-	path.resize(0);
+	state goal;
+
 	q.Reset();
 	q.Add(start, 0, h->h(start, goal));
 
@@ -74,9 +81,21 @@ std::unordered_map<state, float> AStar<environment, state, action>::GetCosts(env
 			env->ApplyOperator(tmp, op);
 			//std::cout << "**Sucessor " << tmp << "\n";
 			q.Add(tmp, next.g + env->GetCost(op), h->h(tmp, goal), next.state);
-			ret.insert(std::pair<state, float>(start, next.g + env->GetCost(op)));
+
+			if (ret.find(tmp) == ret.end())
+			{
+				ret.insert(std::pair<state, float>(tmp, next.g + env->GetCost(op)));
+			}
+			else
+			{
+				if (next.g + env->GetCost(op) < ret.at(tmp))
+				{
+					ret.at(tmp) = next.g + env->GetCost(op);
+				}
+			}
 		}
 	}
+
 	return ret;
 }
 

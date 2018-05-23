@@ -30,6 +30,7 @@ public:
 	bool Empty();
 	AStarData<s> GetNext();
 	void GetPath(s state, std::vector<s> &path);
+	size_t Size();
 private:
 	struct OpenListData {
 		s state;
@@ -117,6 +118,12 @@ void AStarOpenList<s>::GetPath(s state, std::vector<s> &path)
 		path.push_back(data[index].state);
 		index = data[index].parent;
 	}
+}
+
+template <class s>
+size_t AStarOpenList<s>::Size()
+{
+	return heap.size();
 }
 
 template <class s>
