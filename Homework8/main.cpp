@@ -115,6 +115,8 @@ int main(int argc, const char * argv[])
 	h.AddHeuristic(&r4);
 	h.AddHeuristic(&r5);
 
+	OptimizedDH test("lak303d.map");
+
 	
 	for (int x = 0; x < scenarios.GetNumExperiments(); x++)
 	{

@@ -28,6 +28,6 @@ public:
 	OptimizedDH(const char *filename);
 	float h(const GridState &, const GridState &);
 private:
-	std::vector<DifferentialHeuristic> dh;
+	MaxHeuristic<GridState> dh;
 	GridState RANDOM_POINT(const char *filename);
 };
