@@ -42,16 +42,14 @@ OptimizedDH::OptimizedDH(const char *filename)
 		PIVOTS.push_back(DifferentialHeuristic(filename));
 	}
 
-	std::vector<float>::iterator q = Q.begin(); // Q and PIVOTS must always have the same number of elements
-	for (std::vector<GridState>::iterator i = s.begin(); i != s.end(); ++i)
+	for (int i = 0; i < s.size(); ++i)
 	{
-		for (std::vector<GridState>::iterator j(i); j != s.end(); ++j)
+		for (int j = i; j < s.size(); ++j)
 		{
 			if (i == j) continue;
-			for (std::vector<DifferentialHeuristic>::iterator k = PIVOTS.begin(); k != PIVOTS.end(); ++k)
+			for (int k = 0; k < PIVOTS.size(); ++k)
 			{
-				*q += k->h(*i, *j);
-				++q;
+				Q.at(k) += PIVOTS.at(k).h(s.at(i), s.at(j));
 			}
 		}
 	}
@@ -60,13 +58,14 @@ OptimizedDH::OptimizedDH(const char *filename)
 	for (int c = 0; c < 5; ++c)
 	{
 		float GREATEST = 0;
-		std::vector<DifferentialHeuristic>::iterator p = PIVOTS.begin();
-		std::vector<float>::iterator tmp_Q = Q.begin();
-		std::vector<DifferentialHeuristic>::iterator tmp_P = PIVOTS.begin();
 
-		for (q = Q.begin(); q != Q.end(); ++q)
+		int p = 0;
+		int tmp_Q = 0;
+		int tmp_P = 0;
+
+		for (int q = 0; q < Q.size(); ++q)
 		{
-			if (*q > GREATEST)
+			if (Q.at(q) > GREATEST)
 			{
 				tmp_Q = q;
 				tmp_P = p;
@@ -74,9 +73,8 @@ OptimizedDH::OptimizedDH(const char *filename)
 			++p;
 		}
 
-		dh.AddHeuristic(&*tmp_P); // ewwwwwwwww
-		Q.erase(tmp_Q);
-		PIVOTS.erase(tmp_P);
+		dh.AddHeuristic(&PIVOTS.at(tmp_P));
+		Q.assign(tmp_Q, -1);
 	}
 }
 

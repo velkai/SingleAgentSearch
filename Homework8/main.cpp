@@ -95,7 +95,7 @@ void TestGrid(const char *map, const char *scene)
 
 int main(int argc, const char * argv[])
 {
-	//TestSTP();
+	/*//TestSTP();
 	//TestGrid("lak303d.map", "lak303d.map.scen");
 	Grid grid("lak303d.map");
 	ScenarioLoader scenarios("lak303d.map.scen");
@@ -115,8 +115,7 @@ int main(int argc, const char * argv[])
 	h.AddHeuristic(&r4);
 	h.AddHeuristic(&r5);
 
-	OptimizedDH test("lak303d.map");
-
+	
 	
 	for (int x = 0; x < scenarios.GetNumExperiments(); x++)
 	{
@@ -127,7 +126,9 @@ int main(int argc, const char * argv[])
 		astar.GetPath(&grid, from, to, &octile, path);
 		std::cout << "Octile distance w/ random pivots: ";
 		astar.GetPath(&grid, from, to, &h, path);
-	}
+	}*/
+
+	OptimizedDH test("lak303d.map");
 
 	return 0;
 }
