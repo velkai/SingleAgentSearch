@@ -29,7 +29,7 @@ float DifferentialHeuristic::h(const GridState &s1, const GridState &s2)
 	return abs(dists.at(s1) - dists.at(s2));
 }
 
-OptimizedDH::OptimizedDH(const char *filename)
+OptimizedDH::OptimizedDH(const char *filename, int n)
 {
 	std::vector<float> Q;
 	std::vector<GridState> s;
@@ -73,14 +73,20 @@ OptimizedDH::OptimizedDH(const char *filename)
 			++p;
 		}
 
-		dh.AddHeuristic(&PIVOTS.at(tmp_P));
+		dh.push_back(PIVOTS.at(tmp_P));
 		Q.assign(tmp_Q, -1);
 	}
 }
 
 float OptimizedDH::h(const GridState &s1, const GridState &s2)
 {
-	return dh.h(s1, s2);
+	float ret = 0;
+	for (auto i : dh)
+	{
+		ret = std::max(ret, i.h(s1, s2));
+	}
+	ret = std::max(ret, o.h(s1, s2));
+	return ret;
 }
 
 GridState OptimizedDH::RANDOM_POINT(const char *filename)

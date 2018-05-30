@@ -25,9 +25,10 @@ private:
 class OptimizedDH : public Heuristic<GridState>
 {
 public:
-	OptimizedDH(const char *filename);
+	OptimizedDH(const char *filename, int n);
 	float h(const GridState &, const GridState &);
 private:
-	MaxHeuristic<GridState> dh;
+	OctileDistance o;
+	std::vector<DifferentialHeuristic> dh;
 	GridState RANDOM_POINT(const char *filename);
 };
